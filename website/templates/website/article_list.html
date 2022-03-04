@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load website_extras %}
+
+{% block title %}
+    <title> Articles - {{ parent.title|capfirst }} | Kelvin Projects</title>
+{% endblock %}
+
+{% block seo %}
+    {% include 'components/page-seo.html' with page=parent %}
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="container mx-auto flex flex-col gap-y-8 md:gap-y-16 xl:gap-y-28 my-8">
+            <div class="min-h-[400px] grid place-content-center border-b border-stone-400/30 dark:border-stone-500/50">
+                <div class="text-center">
+                    <div class="text-5xl text-prussianBlue dark:text-slate-200 font-bold">
+                        {% if parent.title == 'cpp' %}
+                            C++
+                        {% else %}
+                            {{ parent.title|headline }}
+                        {% endif %}
+                    </div>
+                    <p class="text-xl text-stone-600 dark:text-stone-300 max-w-md mx-auto px-2 pt-2 pb-8">{{ parent.summary|capfirst }}</p>
+                </div>
+                <div class="place-self-center">
+                    <img src="{{ parent.image.url }}" alt="Article language image"
+                         class="aspect-auto max-h-[130px] max-w-[150px]">
+                </div>
+            </div>
+
+            <div class="columns-1 md:columns-2 gap-x-2">
+                {% if articles %}
+                    {% for article in articles %}
+                        {% if article.published %}
+                            {% if article.card_size == 'SM' %}
+                                {% include 'website/article/article-card-small.html' with data=article %}
+                            {% elif article.card_size == 'MD' %}
+                                {% include 'website/article/article-card-big.html' with data=article %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

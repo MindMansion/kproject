@@ -1,0 +1,43 @@
+{% load static %}
+{% load website_extras %}
+
+<div class="min-h-[300px] w-full flex flex-col border dark:border-stone-500/10 dark:text-stone-400 rounded-md box-content">
+    <div class="w-full h-52 bg-center bg-cover aspect-[16/9] rounded-t"
+         style="background-image: url({{ data.image.url }})">
+    </div>
+    <div class="flex-1 flex">
+        <div class="
+        w-[22%] grid place-content-center
+        p-4 font-bold leading-none
+        text-gray-800 uppercase
+        dark:bg-black/50
+        rounded-bl-md backdrop-filter
+        backdrop-blur-lg border-r
+        dark:border-none"
+        >
+            <div>
+                <p class="text-stone-700 pb-2 dark:text-stone-500">{{ data.get_read_time }}</p>
+                <span class="iconify text-stone-500 text-4xl font-medium" data-icon="bi:clock-history"></span>
+            </div>
+
+        </div>
+        <div class="flex-1 flex flex-col justify-between px-4 pt-4 pb-2">
+            <div class="">
+                <h1 class="mb-2 text-2xl font-bold leading-none dark:text-neutral-300">
+                    <a class="hover:text-bitterSweet"
+                       href="{{ data.get_absolute_url }}">{{ data.title|headline }}</a>
+                </h1>
+                <p class="leading-normal pb-4">{{ data.summary|capfirst|truncatechars:50 }}</p>
+            </div>
+            <div class="flex justify-between">
+                <div class="">
+                    <a class="hover:text-bitterSweet"
+                       href="{{ data.get_absolute_url }}">read more</a>
+                </div>
+                <div class="text-stone-900/60 dark:text-tertiary/50 hover:text-bitterSweet dark:hover:text-bitterSweet font-bold">
+                    <a href="{{ data.article_series.get_absolute_url }}">{{ data.article_series.title|title }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

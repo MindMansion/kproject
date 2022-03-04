@@ -1,0 +1,61 @@
+<footer class="min-h-[300px] bg-stone-100/75 dark:bg-[#090909]/60">
+    <div class="wrapper">
+        <div class="container mx-auto min-h-[300px] flex flex-col justify-between">
+            <div class="grid gap-8 pt-10 pb-12">
+                <div>
+                    <div class="md:max-w-[80%] mx-auto flex flex-col md:flex-row gap-4 justify-between">
+                        <div class="flex flex-col items-center justify-center">
+                            <a href="mailto:kelvin.mindmansion@gmail.com"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <span class="iconify text-6xl text-stone-500 dark:text-stone-400"
+                                      data-icon="fluent:mail-copy-20-regular"></span>
+                            </a>
+                            <p class="text-lg text-center">Mail</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <a href="https://twitter.com/mindmansions"
+                               target="_blank">
+                                <span class="iconify text-6xl text-stone-500 dark:text-stone-400"
+                                      data-icon="arcticons:twitter"></span>
+                            </a>
+                            <p class="text-lg text-center">@Mindmansions</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <span class="iconify text-6xl text-stone-500 dark:text-stone-400"
+                                  data-icon="uil:rss-interface"></span>
+                            <p class="text-lg text-center">RSS</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="text-center text-xl font-medium px-3">
+                    Kelvin Programming Projects written in Swift, Python and C++
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 place-items-center text-stone-600 dark:text-stone-300">
+                    <a href="{% url 'website:learn-view' %}" class="hover:text-emerald-500 dark:hover:text-emerald-300">Learning</a>
+                    <a href="/learn/swift" class="hover:text-emerald-500 dark:hover:text-emerald-300">Swift</a>
+                    <a href="/articles/python" class="hover:text-emerald-500 dark:hover:text-emerald-300">Python</a>
+                    <a href="/articles/data-science" class="hover:text-emerald-500 dark:hover:text-emerald-300">Data Science</a>
+                </div>
+            </div>
+            <div class="
+                    flex flex-col
+                    gap-y-2 md:flex-row
+                    items-center
+                    md:justify-between
+                    py-3 border-t border-stone-400/30 dark:border-stone-600/30
+                    text-sm text-stone-800 dark:text-stone-300"
+            >
+                <div class="flex">
+                    <p>Kelvin Projects © </p>
+                    <p id="date" class="px-2"></p>
+                    <a href="/" class="hover:text-bitterSweet">Kelvin Ude</a>
+                </div>
+                <div class="">
+                    <a href="{% url 'website:about-view' %}" class="hover:text-bitterSweet">About</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

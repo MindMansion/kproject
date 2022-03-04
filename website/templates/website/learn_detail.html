@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load  website_extras %}
+
+{% block seo %}
+    {% include 'components/post-seo.html' with post=learn %}
+{% endblock %}
+
+{% block title %}
+    <title>{{ learn.title|capfirst }} | Kelvin Projects</title>
+{% endblock %}
+
+{% block content %}
+    <div class="min-h-[calc(100vh-350px)] flex flex-col">
+        <div>
+            <div class="wrapper">
+                <div class="container mx-auto pt-8 md:pt-12">
+                    {% include 'website/learn/learn-detail-hero.html' with data=learn %}
+                </div>
+            </div>
+        </div>
+        <div class="dark:bg-[#1c1c1e] flex-1">
+            <div class="wrapper">
+                <div class="container mx-auto grid gap-y-8 md:gap-y-16 xl:gap-y-28 mt-8 md:mt-12 mb-20">
+                    <div class="prose dark:prose-invert min-w-full">
+                        <div class="grid gap-y-4 md:gap-y-16">
+                            {% for item in contents %}
+                                {% if item.content_type == 'FUL' %}
+                                    <div>
+                                        {{ item.content|safe }}
+                                    </div>
+
+                                {% elif item.content_type == 'IMG' %}
+                                    <div class="">
+                                        <img src="{{ item.full_image.url }}"
+                                             alt="content image {{ item.full_image.name }}"
+                                             class="aspect-square w-full !max-h-[380px] lg:!min-h-[560px] rounded-sm saturate-150">
+                                    </div>
+                                {% else %}
+                                    <div class="grid grid-cols-12 gap-6 md:gap-10">
+                                        <div class="
+                                            col-span-full md:col-span-4
+                                            h-max bg-tertiary/50
+                                            dark:bg-deepDark/30 rounded-md px-2
+                                            prose-p:my-2 prose-h2:my-0 prose-code:!bg-transparent
+                                            dark:prose-code:!bg-transparent
+                                            prose-h3:my-0 prose-h4:my-0 prose-h5:my-0">
+                                            {{ item.content|safe }}
+                                        </div>
+                                        <div class="col-span-full md:col-span-8 prose-pre:my-0">
+                                            <div class="prose-pre:!text-xs prose-pre:!font-normal">
+                                                {{ item.code|safe }}
+                                            </div>
+                                            <div class="flex justify-end mt-2">
+                                                {% if item.show_preview %}
+                                                    <button id="button" data-template="{{ item.preview.name }}"
+                                                            class="text-xs text-prussianBlue dark:text-stone-400 px-2 py-0.5 border rounded-md border-stone-500/30 dark:border-stone-700">
+                                                        preview
+                                                    </button>
+
+                                                {% endif %}
+                                                <div  style="display: none;">
+                                                    <div id="{{ item.preview.name }}" class="">
+                                                        <img src="{{ item.preview.url }}" alt=""
+                                                             class=" md:max-w-[280px]">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="min-h-[400px] bg-tertiary/60 dark:bg-transparent">
+            <div class="wrapper">
+                <div class="container mx-auto py-10">
+                    <div class="text-4xl font-bold text-prussianBlue dark:text-stone-500 pb-8">
+                        Next
+                    </div>
+                    <div class="grid grid-cols-9 gap-4">
+                        <div class="col-span-full md:col-span-5">
+                            <div class="max-w-md">
+                                <p class="pb-1 text-stone-500 dark:text-stone-600 font-medium "><a
+                                        href="{{ next.series.language.get_absolute_url }}">{{ next.series.title|headline }}</a>
+                                </p>
+                                <h1 class="text-2xl font-bold text-prussianBlue dark:text-stone-500">{{ next.title|headline }}</h1>
+                                <p class="py-4">{{ next.summary|truncatewords:25|capfirst }}</p>
+                                <div class="pt-4 pb-5 md:pb-0 md:pt-5">
+                                    <a href="{{ next.get_absolute_url }}"
+                                       class="text-lg text-emerald-500 hover:text-bitterSweet">View Learn</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-span-full md:col-span-4 flex md:justify-end">
+                            {% if next.image.name|startswith:"default" %}
+                                <img src="{{ next.series.image.url }}" alt=""
+                                     class="aspect-square w-full md:max-w-[300px] h-[250px] md:max-h-[200px]">
+                            {% else %}
+                                <img src="{{ next.image.url }}" alt=""
+                                     class="aspect-square w-full md:max-w-[300px] h-[250px] md:max-h-[200px]">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

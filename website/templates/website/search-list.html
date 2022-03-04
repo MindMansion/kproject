@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load website_extras %}
+
+{% block title %}
+    <title>Results for "{{ query }}" | kelvin Projects</title>
+{% endblock %}
+
+{% block seo %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="min-h-[calc(100vh-388px)]">
+        <div class="wrapper">
+            <div class="container mx-auto flex flex-col pb-16">
+                <div class="min-h-[300px] grid place-content-center">
+                    <div>
+                        <div class="text-2xl text-center font-bold text-prussianBlue dark:text-stone-500 pb-4">Search
+                            Website
+                        </div>
+                        <form method="GET" action="{% url 'website:search-view' %}">
+                            <label class="relative block">
+                                <span class="sr-only">Search</span>
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                                    <span class="iconify" data-icon="iwwa:search"></span>
+                                </span>
+                                <input class="
+                                    placeholder:text-stone-400
+                                    block bg-transparent w-[80vw] md:w-[500px] lg:w-[700px] border border-stone-500/30
+                                    rounded-3xl py-2.5 md:py-3 pl-9 pr-3 shadow-sm focus:outline-none
+                                    focus:border-emerald-500 focus:ring-emerald-500
+                                    focus:ring-1"
+                                       placeholder="{{ query|searchValue }}" type="text" name="q"/>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+                <div class="flex-1 flex flex-col gap-4 gap-6 divide-y-[1px] divide-neutral-400/30 dark:divide-neutral-700/50">
+                    {% if results %}
+                        {% for result in results %}
+                            <div class="min-h-[130px] w-full flex flex-col justify-between py-2">
+                                <div>
+                                    <h2 class="text-xl font-bold hover:text-bitterSweet"><a
+                                            href="{{ result.get_absolute_url }}">{{ result.title|headline }}</a></h2>
+                                    <p class="md:max-w-[90%] pb-3">{{ result.summary|colorMatch:query|safe|truncatechars:180 }}</p>
+                                </div>
+                                <div class="w-full flex justify-between items-end">
+                                    <div class="">
+                                        <a href="{{ result.get_absolute_url }}" class="text-lg font-nunito font-medium text-emerald-500 dark:text-emerald-400 hover:text-bitterSweet dark:hover:text-bitterSweet">view post</a>
+                                    </div>
+                                    <div class="text-xs font-bold font-nunito tracking-wider text-white px-2 py-1 rounded-xl {{ result.tag.all.0.title|tagColor }}">
+                                        {{ result.tag.all.0.title|upper }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        {% elif not results and query %}
+                            <div class="text-lg md:text-xl font-bold">
+                                No match found for:
+                                <span class="text-2xl font-medium text-bitterSweet pl-2">"{{ query }}"</span>
+                                <span class="text-base font-normal italic text-prussianBlue dark:text-stone-500">Try searching for a different keyword</span>
+                            </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% load static %}
+{% load website_extras %}
+
+<a href="{{ article_series.get_absolute_url }}" class="min-h-full">
+    <div class="relative min-h-[250px]
+     border dark:border-stone-900
+     rounded-md backdrop-filter
+     backdrop-blur-lg">
+        <img src="
+                {% if article_series.title == 'swift' %}
+                    {% static 'images/blur-bg4.jpg' %}
+                    {% elif article_series.title == 'python' %}
+                    {% static 'images/blur-bg2.jpg' %}
+                {% endif %}
+                "
+             alt="Swift hero card image"
+             class="absolute aspect-auto w-full h-[250px] md:h-full rounded-md brightness-75 saturate-150">
+        <div class="absolute w-full h-[250px] md:h-full grid place-content-center">
+
+            <div class="bg-white/30 dark:bg-black/30
+                    backdrop-filter backdrop-blur-lg
+                    drop-shadow-md rounded-3xl p-4
+                    text-center flex gap-x-4
+                ">
+                <div>
+                    <img src="
+                            {% if article_series.title == 'swift' %}
+                                {% static 'images/swift-logo.png' %}
+                                {% elif article_series.title == 'python' %}
+                                {% static 'images/python-logo2.png' %}
+                            {% endif %}
+                            "
+                         class="aspect-square max-h-[100px] max-w-[100px] saturate-200"
+                         alt="SwiftUI Logo">
+                </div>
+
+                <div class="flex-1 text-left">
+                    <div class="text-4xl text-white font-extrabold">
+                        {{ article_series.title|headline }}
+                    </div>
+                    <p class="py-2 max-w-[150px] text-stone-50">{{ article_series.summary|capfirst|truncatechars:40 }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</a>

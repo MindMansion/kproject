@@ -1,0 +1,29 @@
+{% load static %}
+{% load website_extras %}
+
+<div class="group min-h-[400px] grid grid-cols-1 md:grid-cols-2
+    bg-tertiary dark:bg-darkTwo p-2 rounded-md box-content
+    border dark:border-stone-500/10
+    ">
+    <div class="min-h-full grid md:place-content-center">
+        <h1 class="text-3xl md:text-4xl text-prussianBlue
+            dark:text-slate-200 font-bold group-hover:text-bitterSweet
+            transition-colors duration-500">
+            {{ data.title|headline }}
+        </h1>
+        <p class="max-w-md pb-6 md:pt-1 text-lg dark:text-stone-400">{{ data.summary|capfirst }}</p>
+        {% if data.is_external %}
+            <a href="{{ data.link }}"
+               class="py-2 text-prussianBlue dark:text-stone-200 hover:text-bitterSweet dark:hover:text-bitterSweet">Learn
+                more</a>
+        {% else %}
+            <a href="{{ data.get_absolute_url }}"
+               class="py-2 text-prussianBlue dark:text-slate-200 hover:text-bitterSweet dark:hover:text-bitterSweet">Learn
+                more</a>
+        {% endif %}
+    </div>
+    <div class="">
+        <img src="{{ data.image.url }}" alt="Article image"
+             class="aspect-auto w-full h-full rounded-md brightness-75">
+    </div>
+</div>

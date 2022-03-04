@@ -1,0 +1,54 @@
+<header class="header">
+    <div class="wrapper h-full items-center">
+        <nav class="header-nav">
+            <div class="header-nav-brand md:w-full">
+                <a href="/"
+                   class="hidden md:block text-prussianBlue dark:text-stone-100 font-roboto font-medium pl-2 tracking-wider">KELVIN
+                    PROJECTS</a>
+                <a href="/"
+                   class="block md:hidden text-prussianBlue dark:text-stone-100 font-roboto font-black pl-2 tracking-wide">KP</a>
+            </div>
+
+            <div class="header-nav-links">
+                <ul class="flex gap-6 xl:gap-14 tracking-wider">
+                    <li class="py-1.5 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-700/60"><a href="{% url 'website:learn-view' %}" class="">Learn</a></li>
+                    <li class="py-1.5 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-700/20"><a href="{% url 'website:article-view' %}" class="">Articles</a></li>
+                    <li class="py-1.5 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-700/20"><a href="{% url 'website:project-view' %}" class="">Projects</a></li>
+                    <li class="py-1.5 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-700/20"><a href="{% url 'website:about-view' %}" class="">About</a></li>
+                </ul>
+            </div>
+
+            <div class="header-nav-actions justify-end w-full">
+                <button id="theme-toggle" type="button"
+                        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-neutral-700/20 focus:outline-none rounded-lg text-sm p-2">
+                    <span id="theme-toggle-dark-icon" class="hidden iconify h-5 w-5 text-stone-500 dark:text-slate-50"
+                          data-icon="emojione-monotone:last-quarter-moon"></span>
+                    <span id="theme-toggle-light-icon" class="hidden iconify h-5 w-5 text-stone-500 dark:text-slate-50"
+                          data-icon="emojione-monotone:first-quarter-moon"></span>
+                </button>
+
+                <div class="flex gap-2 text-stone-900 dark:text-stone-100">
+                    <form method="GET" action="{% url 'website:search-view' %}">
+                        <label class="relative block">
+                            <span class="sr-only">Search</span>
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                            <span class="iconify" data-icon="iwwa:search"></span>
+                        </span>
+                            <input class="
+                                    placeholder:italic placeholder:text-stone-400
+                                    block bg-transparent w-full border border-stone-500/30
+                                    rounded-3xl py-1.5 pl-9 pr-3 shadow-sm focus:outline-none
+                                    focus:border-emerald-500 focus:ring-emerald-500
+                                    focus:ring-1 sm:text-sm"
+                                   placeholder="Search for keywords..." type="text" name="q"/>
+                        </label>
+                    </form>
+                </div>
+
+                <div class="flex md:hidden pl-4 pr-2">
+                    {% include 'components/mobile-nav.html' %}
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

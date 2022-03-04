@@ -1,0 +1,57 @@
+{% load website_extras %}
+
+<div class="min-h-[500px]
+        grid grid-cols-10 gap-5
+        box-content
+        border dark:border-stone-500/10
+        bg-tertiary dark:bg-darkTwo
+        rounded-md  px-3
+        ">
+    <div class="col-span-full md:col-span-4">
+        <div class="h-full flex flex-col py-5">
+            <div class="flex-1 py-10 grid place-content-center">
+                <div class="text-4xl font-medium text-prussianBlue dark:text-stone-400"><span
+                        class="text-xl font-bold tracking-tighter pr-1.5">EST</span>{{ lseries|readtime }}<span
+                        class="text-3xl pl-0.5">min</span></div>
+
+                <div class="flex items-center justify-center pt-2.5">
+                    <span class="iconify text-2xl text-emerald-300 dark:text-emerald-400"
+                          data-icon="fluent:folder-add-20-regular"></span>
+                    <div class="text-2xl font-medium text-center text-stone-500 ml-1.5">{{ lseries.0.tag.all.0.title|headline }}</div>
+                </div>
+            </div>
+            <div class="">
+                <img src="{{ series.image.url }}" alt="Learn series image"
+                     class="aspect-auto w-full max-h-[230px] md:max-h-[300px] rounded-md saturate-150">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-span-full md:col-span-6">
+        <div class="h-full flex flex-col gap-y-4">
+            <div class="border-b dark:border-stone-500/50 dark:text-stone-400 py-5">
+                <h1 class="text-3xl font-bold text-prussianBlue dark:text-stone-200">{{ series.title|headline }}</h1>
+                <p class="py-2 max-w-md">{{ series.summary|capfirst }}</p>
+            </div>
+            <div class="flex flex-col gap-y-4 py-5">
+                {% for learn in lseries %}
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <div class="p-2 rounded-full bg-black/5 dark:bg-darkTwo">
+                                <span class="iconify text-xs text-emerald-300 dark:text-emerald-400"
+                                      data-icon="akar-icons:check-box-fill"></span>
+                            </div>
+                            <a href="{{ learn.get_absolute_url }}"
+                               class="text-prussianBlue dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet">{{ learn.title|headline }}</a>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                            <span class="iconify text-stone-500 text-sm font-medium"
+                                  data-icon="bi:clock-history"></span>
+                            <p class="text-stone-700 dark:text-stone-500">{{ learn|learnTime }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

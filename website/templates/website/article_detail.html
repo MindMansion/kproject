@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load website_extras %}
+{% load custom_tags %}
+
+
+{% block title %}
+    <title>{{ article.title|capfirst }} | Kelvin Projects</title>
+{% endblock %}
+
+{% block seo %}
+    {% include 'components/post-seo.html' with post=article %}
+{% endblock %}
+
+{% block content %}
+    <div class="min-h-[calc(100vh-350px)] flex flex-col">
+        <div class="dark:bg-[#1c1c1e] flex-1">
+            <div class="wrapper">
+                <div class="container mx-auto hidden md:grid grid-cols-12 gap-x-10 py-8">
+                    <div class="col-span-9">
+                        <div class="border-b border-stone-500/30 dark:border-stone-500 pb-5">
+                            <p class="text-lg text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet pb-2 font-bold">
+                                <a href="{{ article.article_series.get_absolute_url }}">{{ article.article_series.title|headline }}</a>
+                            </p>
+                            <h1 class="text-prussianBlue dark:text-slate-200 text-4xl lg:text-5xl font-bold">
+                                {{ article.title|headline }}
+                            </h1>
+                            <p class="text-lg font-medium py-5">{{ article.summary|capfirst }}</p>
+                            <div class="flex gap-4 items-end">
+                                <p class="font-bold text-stone-500 dark:text-stone-400">kelvin Ude</p>
+                                <p class="">{{ article.published_date|date }}</p>
+                                <p class="italic text-sm text-stone-500 dark:text-stone-600">
+                                    updated: {{ article.updated_date|date }}</p>
+                            </div>
+                        </div>
+
+                        {% if not article.no_image %}
+                            <div class="py-6">
+                                <img src="{{ article.image.url }}" alt="Article image"
+                                     class="aspect-auto w-full max-h-[500px] rounded-sm saturate-150">
+                            </div>
+                        {% endif %}
+                        <div class="prose prose-zinc prose-lg dark:prose-invert
+                                    max-w-none my-6 prose-code:!bg-transparent
+                                    dark:prose-code:!bg-transparent prose-h2:mb-2.5">
+                            {{ article.content|safe }}
+                        </div>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="md:mt-[40px]">
+                            <div class="text-lg font-bold">Content Objectives</div>
+                            <div class="grid gap-2 mt-2 pl-2">
+                                {% for tag, val in article.get_toc %}
+                                    <p class=" {{ tag|toc }} text-sm border-l-0 hover:border-l-2 text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet">{{ val }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {# Mobibile #}
+                <div class="container mx-auto">
+                    <div class="flex flex-col md:hidden py-5">
+                        <div class="border-b border-stone-500/30 dark:border-stone-500 pb-5">
+                            <p class="text-lg text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet pb-2 font-bold">
+                                <a href="{{ article.article_series.get_absolute_url }}">{{ article.article_series.title|capfirst }}</a>
+                            </p>
+                            <h1 class="text-prussianBlue dark:text-slate-200 text-4xl lg:text-5xl font-bold">
+                                {{ article.title|headline }}
+                            </h1>
+                            <p class="text-lg font-medium py-5">{{ article.summary|capfirst }}</p>
+                            <div class="flex gap-4">
+                                <p class="font-bold text-stone-500 dark:text-stone-400">kelvin Ude</p>
+                                <p class="">{{ article.published_date|date }}</p>
+                                <p class="italic text-sm text-stone-500 dark:text-stone-600">
+                                    updated: {{ article.updated_date|date }}</p>
+                            </div>
+                        </div>
+                        <div class="py-6">
+                            <img src="{{ article.image.url }}" alt="Article image"
+                                 class="aspect-auto w-full max-h-[500px] rounded-sm">
+                        </div>
+                        <div class="py-5">
+                            <div class="prose prose-lg prose-stone dark:prose-invert
+                                        max-w-none prose-code:!bg-transparent
+                                        dark:prose-code:!bg-transparent prose-h2:mb-2.5">
+                                {{ article.content|safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="min-h-[400px] bg-tertiary/60 dark:bg-transparent">
+            <div class="wrapper">
+                <div class="container mx-auto py-10">
+                    <div class="pb-16">
+                        <div class="py-2 text-stone-800 dark:text-stone-300 text-4xl font-bold">Recommended</div>
+                        <p class="max-w-md text-lg">List of similar articles you might like, to read next, if you're
+                            interested.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {% for rocommend in recommended %}
+                            {% include 'website/article/article-recommend-card.html' with data=rocommend %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

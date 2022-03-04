@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load website_extras %}
+
+{% block title %}
+    <title>{{ project.title|capfirst }} | Kelvin Projects</title>
+{% endblock %}
+
+{% block seo %}
+    {% include 'components/post-seo.html' with post=project %}
+{% endblock %}
+
+{% block content %}
+    <div class="min-h-[calc(100vh-388px)] flex flex-col">
+        <div class="relative min-h-[500px] w-full">
+            <div class="absolute h-full w-full bg-cover bg-center md:bg-top lg:bg-center bg-opacity-10 backdrop-filter brightness-75 saturate-200"
+                 style="background-image: url({{ project.preview.url }})">
+            </div>
+            <div class="absolute w-full h-full bg-white/80 dark:bg-black/80">
+                <div class="wrapper">
+                    <div class="container mx-auto pt-8 md:pt-10">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="">
+                                <h1 class="text-5xl font-bold font-roboto text-prussianBlue dark:text-stone-100">{{ project.title|headline }}</h1>
+                                <p class="pt-4 max-w-md text-lg">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dicta esse
+                                    facilis inventore minima minus nisi placeat quod reiciendis vero.
+                                </p>
+                            </div>
+                            <div class="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-1 mt-10 md:mt-16">
+            <div class="wrapper">
+                <div class="container mx-auto">
+                    <div class="grid gap-y-8 md:gap-y-12">
+                        {% if project %}
+                            {% for content in project|contents %}
+                                <img src="{{ content.image.url }}" alt="" class="aspect-[16/9] w-full ">
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

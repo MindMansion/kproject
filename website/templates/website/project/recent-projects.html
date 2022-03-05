@@ -1,21 +1,23 @@
 {% load website_extras %}
 
-<div>
-    <div class="text-center max-w-md mx-auto pb-5">
-        <div class="text-4xl font-bold font-nunito pb-2">Projects</div>
-        <p class="">Projects build and ready for use, for different platforms using different languages and
-            frameworks</p>
-    </div>
-    <div class="min-h-[600px] border border-stone-500/10 dark:border-stone-900 rounded-md p-3">
-        <div class="grid gap-y-4">
-            {% for project in projects %}
-                {% if forloop.counter0 == 1 %}
-                    {% include 'website/project/project-card.html'  with data=project %}
-                {% else %}
-                    {% include 'website/project/project-cardl.html' with data=project %}
-                {% endif %}
-            {% endfor %}
+{% if projects %}
+    <div>
+        <div class="text-center max-w-md mx-auto pb-5">
+            <div class="text-4xl font-bold font-nunito pb-2">Projects</div>
+            <p class="">Projects build and ready for use, for different platforms using different languages and
+                frameworks</p>
+        </div>
+        <div class="min-h-[600px] border border-stone-500/10 dark:border-stone-900 rounded-md p-3">
+            <div class="grid gap-y-4">
+                {% for project in projects %}
+                    {% if forloop.counter0 == 1 %}
+                        {% include 'website/project/project-card.html'  with data=project %}
+                    {% else %}
+                        {% include 'website/project/project-cardl.html' with data=project %}
+                    {% endif %}
+                {% endfor %}
 
+            </div>
         </div>
     </div>
-</div>
+{% endif %}

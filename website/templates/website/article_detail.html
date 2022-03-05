@@ -15,9 +15,9 @@
     <div class="min-h-[calc(100vh-350px)] flex flex-col">
         <div class="dark:bg-[#1c1c1e] flex-1">
             <div class="wrapper">
-                <div class="container mx-auto hidden md:grid grid-cols-12 gap-x-10 py-8">
+                <div class="container mx-auto hidden md:grid grid-cols-12 gap-x-10 lg:py-8">
                     <div class="col-span-9">
-                        <div class="border-b border-stone-500/30 dark:border-stone-500 pb-5">
+                        <div class="border-b dark:border-stone-500/50 pb-5">
                             <p class="text-lg text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet pb-2 font-bold">
                                 <a href="{{ article.article_series.get_absolute_url }}">{{ article.article_series.title|headline }}</a>
                             </p>
@@ -27,9 +27,9 @@
                             <p class="text-lg font-medium py-5">{{ article.summary|capfirst }}</p>
                             <div class="flex gap-4 items-end">
                                 <p class="font-bold text-stone-500 dark:text-stone-400">kelvin Ude</p>
-                                <p class="">{{ article.published_date|date }}</p>
-                                <p class="italic text-sm text-stone-500 dark:text-stone-600">
-                                    updated: {{ article.updated_date|date }}</p>
+                                <time class="">{{ article.published_date|date }}</time>
+                                <time class="italic text-sm text-stone-500 dark:text-stone-600">
+                                    updated: {{ article.updated_date|date }}</time>
                             </div>
                         </div>
 
@@ -59,8 +59,8 @@
 
                 {# Mobibile #}
                 <div class="container mx-auto">
-                    <div class="flex flex-col md:hidden py-5">
-                        <div class="border-b border-stone-500/30 dark:border-stone-500 pb-5">
+                    <div class="flex flex-col md:hidden">
+                        <div class="border-b dark:border-stone-500/50 pb-5">
                             <p class="text-lg text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet pb-2 font-bold">
                                 <a href="{{ article.article_series.get_absolute_url }}">{{ article.article_series.title|capfirst }}</a>
                             </p>

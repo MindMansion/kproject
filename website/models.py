@@ -10,7 +10,7 @@ from lxml import etree
 class ArticleSeries(models.Model):
     title = models.CharField(max_length=200, help_text="Enter a series name", null=True)
     summary = models.CharField(max_length=300, help_text="Enter short description of the series")
-    image = models.ImageField(default="default.jpg", upload_to="articleSeriesImages")
+    image = models.ImageField(default="default.jpg", upload_to="article-series-images")
     article_series_slug = AutoSlugField(populate_from='title')
 
     def __str__(self):
@@ -40,7 +40,7 @@ class ArticleTag(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=300, help_text="Input the title for this article")
     summary = models.CharField(max_length=300, help_text="Input the summary for this article")
-    image = models.ImageField(default="default.jpg", upload_to="articleImages")
+    image = models.ImageField(default="default.jpg", upload_to="article-images")
     content = HTMLField()
     published_date = models.DateTimeField(default=datetime.now)
     updated_date = models.DateTimeField(default=datetime.now)
@@ -90,7 +90,7 @@ class Article(models.Model):
 class LearnLanguage(models.Model):
     title = models.CharField(max_length=300, help_text="Input the title for this language")
     summary = models.CharField(max_length=300, help_text="Input the summary for this language")
-    image = models.ImageField(default="default.jpg", upload_to="learnImages")
+    image = models.ImageField(default="default.jpg", upload_to="learn-images")
     learn_lang_slug = AutoSlugField(populate_from='title')
 
     def __str__(self):
@@ -112,7 +112,7 @@ class LearnLanguage(models.Model):
 class LearnSeries(models.Model):
     title = models.CharField(max_length=300, help_text="Input the title for this language series")
     summary = models.CharField(max_length=300, help_text="Input the summary for this language series")
-    image = models.ImageField(default="default.jpg", upload_to="learnImages")
+    image = models.ImageField(default="default.jpg", upload_to="learn-images")
     learn_lang_series_slug = AutoSlugField(populate_from='title')
     language = models.ForeignKey(LearnLanguage, default=1, on_delete=models.SET_DEFAULT)
     published = models.BooleanField(default=False, help_text="Publish this series")
@@ -144,7 +144,7 @@ class LearnTag(models.Model):
 class Learn(models.Model):
     title = models.CharField(max_length=300, help_text="Input the title for this learn series")
     summary = models.CharField(max_length=300, help_text="Input the summary for this learn series")
-    image = models.ImageField(default="default.jpg", upload_to="learnImages")
+    image = models.ImageField(default="default.jpg", upload_to="learn-images")
     published_date = models.DateTimeField(default=datetime.now)
     updated_date = models.DateTimeField(default=datetime.now)
     learn_slug = AutoSlugField(populate_from='title', max_length=300)
@@ -177,11 +177,11 @@ class LearnContent(models.Model):
     content = HTMLField()
     code = HTMLField(help_text="Enter in the code")
     published_date = models.DateTimeField(default=datetime.now)
-    preview = models.ImageField(default="default.jpg", upload_to="contentPreviews",
+    preview = models.ImageField(default="default.jpg", upload_to="content-previews",
                                 help_text="Upload image for preview")
     show_preview = models.BooleanField(default=False)
     learn = models.ForeignKey(Learn, on_delete=models.CASCADE, null=True)
-    full_image = models.ImageField(default='default.jpg', upload_to="contentImages")
+    full_image = models.ImageField(default='default.jpg', upload_to="content-images")
 
     CONTENT_TYPES = [
         ('BOT', 'Both'),
@@ -211,8 +211,8 @@ class Project(models.Model):
     title = models.CharField(max_length=200)
     summary = models.CharField(max_length=400)
     link = models.URLField(max_length=300, help_text="Enter project url", blank=True)
-    image = models.ImageField(default="default.jpg", upload_to="projectImages")
-    preview = models.ImageField(default="default.jpg", upload_to="projectImages")
+    image = models.ImageField(default="default.jpg", upload_to="project-images")
+    preview = models.ImageField(default="default.jpg", upload_to="project-images")
     published_date = models.DateTimeField(default=datetime.now)
     is_external = models.BooleanField(default=False)
     published = models.BooleanField(default=False, help_text="Publish this project")
@@ -242,7 +242,7 @@ class Project(models.Model):
 class ProjectContent(models.Model):
     title = models.CharField(max_length=100)
     content = HTMLField()
-    image = models.ImageField(default='default-project.jpg', upload_to='projectContentImages')
+    image = models.ImageField(default='default-project.jpg', upload_to='project-content-images')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, null=True)
 
     POSITIONS = [

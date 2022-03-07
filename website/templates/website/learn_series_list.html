@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load  static %}
 {% load website_extras %}
 
 {% block title %}
@@ -12,7 +13,8 @@
 
 {% block content %}
     <div>
-        <div class="min-h-[200px] md:min-h-[500px] bg-tertiary dark:bg-content">
+        <div class="relative min-h-[200px] md:min-h-[500px] bg-cover" style="background-image: url({% static "images/bg-blurred.jpg" %});">
+            <div class="w-full min-h-full bg-tertiary/50 dark:bg-black/80">
             <div class="wrapper">
                 <div class="
                     min-h-[200px] md:min-h-[500px]
@@ -20,7 +22,7 @@
                     grid place-content-center py-8 md:pt-16 lg:pt-24
                     ">
                     <div class="grid place-content-center text-center">
-                        <div class="text-5xl font-bold text-prussianBlue dark:text-stone-400">
+                        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-prussianBlue dark:text-stone-200 font-pro">
                             {% if parent.title|lower == 'cpp' %}
                                 C++
                             {% else %}
@@ -43,6 +45,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="wrapper">
             <div class="container mx-auto flex flex-col gap-y-8 md:gap-y-16 xl:gap-y-28 my-8">

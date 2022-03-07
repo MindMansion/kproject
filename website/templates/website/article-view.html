@@ -44,12 +44,12 @@
                             {% if items.count > 0 %}
                                 {% if language.title == 'swift' %}
                                     <div>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-0 space-y-2">
-                                            <div class="grid place-content-center text-center">
-                                                <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">Swift
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-1">
+                                            <div class="grid pb-6 place-content-center text-center text-stone-800 dark:text-stone-300 font-pro">
+                                                <div class="text-2xl lg:text-3xl font-bold">Swift
                                                     Articles
                                                 </div>
-                                                <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
+                                                <p class="py-2 max-w-md md:text-lg">{{ language.summary }}</p>
                                             </div>
                                             {% for item in items %}
                                                 {% if item.published %}
@@ -69,22 +69,22 @@
 
                                 {% elif language.title == 'python' %}
                                     <div>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-0 space-y-2">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-1">
                                             {% for item in items %}
                                                 {% if item.published %}
                                                     {% if forloop.counter == 1 %}
-                                                        <div class="md:hidden grid place-content-center text-center">
-                                                            <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">
+                                                        <div class="md:hidden grid pb-6 place-content-center text-center text-stone-800 dark:text-stone-300 font-pro">
+                                                            <div class="text-2xl lg:text-3xl font-bold tracking-wide">
                                                                 Python Articles
                                                             </div>
-                                                            <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
+                                                            <p class="py-2 max-w-md md:text-lg">{{ language.summary|capfirst }}</p>
                                                         </div>
                                                         {% include 'website/article/article-card-small.html' with data=item %}
-                                                        <div class="hidden md:grid place-content-center text-center">
-                                                            <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">
+                                                        <div class="hidden md:grid pb-6 place-content-center text-center text-stone-800 dark:text-stone-300 font-pro">
+                                                            <div class="text-2xl lg:text-3xl font-bold tracking-wide">
                                                                 Python Articles
                                                             </div>
-                                                            <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
+                                                            <p class="py-2 max-w-md md:text-lg">{{ language.summary|capfirst }}</p>
                                                         </div>
                                                     {% else %}
                                                         {% if forloop.counter > 3 %}
@@ -104,13 +104,13 @@
 
                                 {% else %}
                                     <div>
-                                        <div class="grid place-content-center text-center pb-6">
-                                            <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">{{ language.title|headline }}
+                                        <div class="grid place-content-center text-center pb-6 text-stone-800 dark:text-stone-300 font-pro">
+                                            <div class="text-2xl lg:text-3xl font-bold tracking-wide">{{ language.title|headline }}
                                                 Articles
                                             </div>
-                                            <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
+                                            <p class="py-2 max-w-md md:text-lg">{{ language.summary|capfirst }}</p>
                                         </div>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-0">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-1">
                                             {% for item in items %}
                                                 {% if item.published %}
                                                     {% if forloop.counter0 > 3 %}

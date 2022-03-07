@@ -3,18 +3,18 @@
 
 <div class="
     border dark:border-stone-500/10 bg-tertiary dark:bg-darkFour
-    rounded-md min-h-[130px] flex gap-x-3 p-2 mb-2
+    rounded-md min-h-[100px] md:min-h-[130px] flex gap-x-3 p-2 mb-2
     text-stone-900 dark:text-stone-200 group
     break-inside-avoid-column
     "
 >
-    <div class="min-h-full grid place-content-center">
+    <div>
         {% if data.no_image %}
             <img src="{{ data.article_series.image.url }}" alt="Article image"
-                 class="aspect-square max-w-[100px] md:max-w-[120px] rounded-md">
+                 class="aspect-square h-[100px] md:h-[120px] md:max-w-[120px] rounded-md">
         {% else %}
             <img src="{{ data.image.url }}" alt="Article image"
-                 class="aspect-square max-w-[100px] md:max-w-[120px] rounded-md">
+                 class="aspect-square h-[100px] md:h-[120px] md:max-w-[120px] rounded-md">
         {% endif %}
     </div>
 
@@ -25,7 +25,7 @@
                     >{{ data.title|headline }}
                 </h1>
             </a>
-            <p class="hidden md:block max-w-full lg:max-w-[90%] pt-1 pb-2 text-stone-800 dark:text-stone-400">{{ data.summary|capfirst|truncatechars:70 }}</p>
+            <p class="hidden lg:block max-w-full lg:max-w-[90%] pt-1 pb-2 text-stone-800 dark:text-stone-400">{{ data.summary|capfirst|truncatechars:70 }}</p>
         </div>
         <div class="flex justify-between items-center">
             <p class="text-sm text-bitterSweet">

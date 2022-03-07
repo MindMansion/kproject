@@ -3,14 +3,14 @@
         <nav class="header-nav">
             <div class="header-nav-brand md:w-full">
                 <a href="/"
-                   class="hidden md:block text-prussianBlue dark:text-stone-100 font-roboto font-medium pl-2 tracking-wider">KELVIN
+                   class="hidden md:block text-prussianBlue dark:text-stone-100 font-roboto font-medium tracking-wider">KELVIN
                     PROJECTS</a>
                 <a href="/"
-                   class="block md:hidden text-prussianBlue dark:text-stone-100 font-roboto font-black pl-2 tracking-wide">KP</a>
+                   class="block md:hidden text-prussianBlue dark:text-stone-100 font-roboto font-black tracking-wide">KP</a>
             </div>
 
             <div class="header-nav-links">
-                <ul class="flex gap-6 xl:gap-14 tracking-wider">
+                <ul class="flex gap-6 xl:gap-14 tracking-wider text-sm text-stone-600 dark:text-stone-300">
                     <li class="py-1.5 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-700/60"><a href="{% url 'website:learn-view' %}" class="">Learn</a></li>
                     <li class="py-1.5 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-700/20"><a href="{% url 'website:article-view' %}" class="">Articles</a></li>
                     <li class="py-1.5 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-700/20"><a href="{% url 'website:project-view' %}" class="">Projects</a></li>
@@ -27,7 +27,7 @@
                           data-icon="emojione-monotone:first-quarter-moon"></span>
                 </button>
 
-                <div class="flex gap-2 text-stone-900 dark:text-stone-100">
+                <div class="hidden md:flex gap-2 text-stone-900 dark:text-stone-100">
                     <form method="GET" action="{% url 'website:search-view' %}">
                         <label class="relative block">
                             <span class="sr-only">Search</span>
@@ -45,7 +45,7 @@
                     </form>
                 </div>
 
-                <div class="flex md:hidden pl-4 pr-2">
+                <div class="flex md:hidden pl-4">
                     {% include 'components/mobile-nav.html' %}
                 </div>
             </div>

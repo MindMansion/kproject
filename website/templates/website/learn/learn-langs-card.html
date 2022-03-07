@@ -1,0 +1,33 @@
+{% load static %}
+
+
+<a href="{{ lang_series.get_absolute_url }}"
+   class="
+   min-h-[300px] border
+   dark:border-stone-500/50
+   box-content hover:border-bitterSweet/60 dark:hover:border-bitterSweet/50">
+    <div class="min-h-full grid place-content-center">
+        <img src="
+                {% if lang_series.title == 'cpp' %}
+                        {% static 'images/cpp-logo2.png' %}
+                    {% elif lang_series.title == 'python' %}
+                        {% static 'images/python-logo2.png' %}
+                    {% elif lang_series.title == 'swift' %}
+                        {% static 'images/swift-logo.png' %}
+                {% endif %}
+                            "
+             class="aspect-square max-h-[100px] max-w-[100px] mx-auto saturate-200"
+             alt="learn page langauge logo">
+
+        <div class="text-center mt-4">
+            <div class="text-2xl lg:text-3xl text-prussianBlue dark:text-white font-extrabold">
+                {% if lang_series.title == 'cpp' %}
+                    C++
+                {% else %}
+                    {{ lang_series.title|title }}
+                {% endif %}
+            </div>
+            <p class="py-2 max-w-[200px] text-stone-600 dark:text-stone-300">{{ lang_series.summary|truncatechars:50|capfirst }}</p>
+        </div>
+    </div>
+</a>

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load website_extras %}
 
 {% block title %}
@@ -6,108 +7,130 @@
 {% endblock %}
 
 {% block seo %}
-    <meta property="og:title" content="Articles Page" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Kelvin Projects articles posts" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Articles Page"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Kelvin Projects articles posts"/>
+    <meta property="og:locale" content="en_US"/>
 {% endblock %}
 
 {% block content %}
-    <div class="wrapper">
-        <div class="container mx-auto flex flex-col gap-y-16 xl:gap-y-28 mt-2 mb-16">
-            {% include 'website/article/article-hero.html' with data=articles %}
-            <div class="grid gap-y-16 xl:gap-y-28">
-                {% if langs %}
-                    {% for language, items in langs %}
-                        {% if items.count > 0 %}
-                            {% if language.title == 'swift' %}
-                                <div>
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-0 space-y-2">
-                                        <div class="grid place-content-center text-center">
-                                            <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">Swift
-                                                Articles
-                                            </div>
-                                            <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
-                                        </div>
-                                        {% for item in items %}
-                                            {% if item.published %}
-                                                {% if forloop.counter > 3 %}
-                                                    {% include 'website/article/article-card-big.html' with data=item %}
-                                                {% else %}
-                                                    {% include 'website/article/article-card-small.html' with data=item %}
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                    <div class="w-full text-right mt-2">
-                                        <a href="{{ language.get_absolute_url }}" class="text-sm text-emerald-500">view
-                                            more</a>
-                                    </div>
-                                </div>
+    <div class="">
+        <div class="min-h-[400px] lg:min-h-[500px] bg-tertiary dark:bg-black/50 mb-16">
+            <div class="wrapper">
+                <div class="container mx-auto grid place-content-center min-h-[400px] lg:min-h-[500px] text-center">
+                    <div class="text-4xl lg:text-5xl font-extrabold text-prussianBlue dark:text-stone-300">
+                        Article
+                    </div>
+                    <p class="max-w-lg mx-auto text-lg md:text-xl font-medium pt-4 mb-6 px-2 md:px-0">Article posts
+                        on how to build real
+                        world applications with different languages and frameworks</p>
+                    <img src="{% static 'images/article-hex.png' %}" alt="" class="aspect-square max-w-[150px] mx-auto">
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="container mx-auto flex flex-col gap-y-16 xl:gap-y-28 mt-2 mb-10 md:mb-16">
+                <div class="grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-4">
+                    {% if articles %}
+                        {% for article in articles %}
+                            {% include 'website/article/article-card-series.html' with article=article %}
+                        {% endfor %}
 
-                            {% elif language.title == 'python' %}
-                                <div>
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-0 space-y-2">
-                                        {% for item in items %}
-                                            {% if item.published %}
-                                                {% if forloop.counter == 1 %}
-                                                    <div class="md:hidden grid place-content-center text-center">
-                                                        <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">
-                                                            Python Articles
-                                                        </div>
-                                                        <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
-                                                    </div>
-                                                    {% include 'website/article/article-card-small.html' with data=item %}
-                                                    <div class="hidden md:grid place-content-center text-center">
-                                                        <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">
-                                                            Python Articles
-                                                        </div>
-                                                        <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
-                                                    </div>
-                                                {% else %}
+                    {% endif %}
+                </div>
+                <div class="grid gap-y-16 xl:gap-y-28">
+                    {% if langs %}
+                        {% for language, items in langs %}
+                            {% if items.count > 0 %}
+                                {% if language.title == 'swift' %}
+                                    <div>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-0 space-y-2">
+                                            <div class="grid place-content-center text-center">
+                                                <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">Swift
+                                                    Articles
+                                                </div>
+                                                <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
+                                            </div>
+                                            {% for item in items %}
+                                                {% if item.published %}
                                                     {% if forloop.counter > 3 %}
                                                         {% include 'website/article/article-card-big.html' with data=item %}
                                                     {% else %}
                                                         {% include 'website/article/article-card-small.html' with data=item %}
                                                     {% endif %}
                                                 {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                    <div class="w-full text-right mt-2">
-                                        <a href="{{ language.get_absolute_url }}" class="text-sm text-emerald-500">view
-                                            more</a>
-                                    </div>
-                                </div>
-
-                            {% else %}
-                                <div>
-                                    <div class="grid place-content-center text-center pb-6">
-                                        <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">{{ language.title|headline }}
-                                            Articles
+                                            {% endfor %}
                                         </div>
-                                        <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
+                                        <div class="w-full text-right mt-2">
+                                            <a href="{{ language.get_absolute_url }}" class="text-sm text-emerald-500">view
+                                                more</a>
+                                        </div>
                                     </div>
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-0">
-                                        {% for item in items %}
-                                            {% if item.published %}
-                                                {% if forloop.counter0 > 3 %}
-                                                    {% include 'website/article/article-card-big.html' with data=item %}
-                                                {% else %}
-                                                    {% include 'website/article/article-card-small.html' with data=item %}
+
+                                {% elif language.title == 'python' %}
+                                    <div>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-0 space-y-2">
+                                            {% for item in items %}
+                                                {% if item.published %}
+                                                    {% if forloop.counter == 1 %}
+                                                        <div class="md:hidden grid place-content-center text-center">
+                                                            <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">
+                                                                Python Articles
+                                                            </div>
+                                                            <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
+                                                        </div>
+                                                        {% include 'website/article/article-card-small.html' with data=item %}
+                                                        <div class="hidden md:grid place-content-center text-center">
+                                                            <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">
+                                                                Python Articles
+                                                            </div>
+                                                            <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
+                                                        </div>
+                                                    {% else %}
+                                                        {% if forloop.counter > 3 %}
+                                                            {% include 'website/article/article-card-big.html' with data=item %}
+                                                        {% else %}
+                                                            {% include 'website/article/article-card-small.html' with data=item %}
+                                                        {% endif %}
+                                                    {% endif %}
                                                 {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
+                                            {% endfor %}
+                                        </div>
+                                        <div class="w-full text-right mt-2">
+                                            <a href="{{ language.get_absolute_url }}" class="text-sm text-emerald-500">view
+                                                more</a>
+                                        </div>
                                     </div>
-                                    <div class="w-full text-right mt-2">
-                                        <a href="{{ language.get_absolute_url }}" class="text-sm text-emerald-500">view
-                                            more</a>
+
+                                {% else %}
+                                    <div>
+                                        <div class="grid place-content-center text-center pb-6">
+                                            <div class="text-4xl font-bold text-stone-800 dark:text-stone-400">{{ language.title|headline }}
+                                                Articles
+                                            </div>
+                                            <p class="max-w-md pt-2 pb-5">{{ language.summary }}</p>
+                                        </div>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-2.5 gap-y-0">
+                                            {% for item in items %}
+                                                {% if item.published %}
+                                                    {% if forloop.counter0 > 3 %}
+                                                        {% include 'website/article/article-card-big.html' with data=item %}
+                                                    {% else %}
+                                                        {% include 'website/article/article-card-small.html' with data=item %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <div class="w-full text-right mt-2">
+                                            <a href="{{ language.get_absolute_url }}" class="text-sm text-emerald-500">view
+                                                more</a>
+                                        </div>
                                     </div>
-                                </div>
+                                {% endif %}
                             {% endif %}
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,27 @@
+{% load static %}
+{% load website_extras %}
+
+<a href="{{ article.get_absolute_url }}" class="min-h-[150px] border dark:border-stone-500/50 rounded-sm">
+    <div class="min-h-full flex items-center p-4 gap-x-4">
+        <img src="{{ article.image.url }}"
+             class="aspect-square max-h-[100px]
+              saturate-200"
+             alt="Article page logo"
+             style="{% if article.title == 'cpp' %}
+                 max-width: 125px;
+                {% else %}
+                 max-width: 80px;
+             {% endif %}">
+
+        <div class="flex-1 text-left">
+            <div class="text-2xl lg:text-3xl text-prussianBlue dark:text-white font-extrabold">
+                {% if article.title == 'cpp' %}
+                    C++
+                {% else %}
+                    {{ article.title|headline }}
+                {% endif %}
+            </div>
+            <p class="py-2 max-w-[150px] text-stone-600 dark:text-stone-300">{{ article.summary|capfirst|truncatechars:40 }}</p>
+        </div>
+    </div>
+</a>

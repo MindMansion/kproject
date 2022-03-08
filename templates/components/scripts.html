@@ -1,5 +1,4 @@
 {% load static %}
-<script type="text/javascript" src="{% static 'js/tippyJSFile.js' %}"></script>
 <script type="text/javascript" src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 <script type="text/javascript" src="{% static 'js/currentDate.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/colorScheme.js' %}"></script>
@@ -8,5 +7,14 @@
         var element = document.getElementById("navButton");
         element.classList.toggle("navBarStyle");
     }
+
+    tippy('#button', {
+        content(reference) {
+            const id = reference.getAttribute('data-template');
+            return document.getElementById(id);
+        },
+        trigger: 'click',
+        allowHTML: true,
+    });
 </script>
 

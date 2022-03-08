@@ -86,10 +86,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="py-6">
-                            <img src="{{ article.image.url }}" alt="Article image"
-                                 class="aspect-auto w-full max-h-[500px] rounded-sm">
-                        </div>
+                        {% if not article.no_image %}
+                            <div class="py-6">
+                                <img src="{{ article.image.url }}" alt="Article image"
+                                     class="aspect-auto w-full max-h-[500px] rounded-sm">
+                            </div>
+                        {% endif %}
                         <div class="py-5">
                             <div class="prose prose-lg text-color-dark dark:text-color-light dark:prose-invert
                                         max-w-none prose-code:!bg-transparent

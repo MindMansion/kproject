@@ -11,9 +11,22 @@
             break-inside-avoid-column
             "
 >
-    <div class="w-full h-40 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
-         style="background-image: url({{ data.image.url }})">
-    </div>
+    {% if data.no_image %}
+        {% if data.article_series.title == 'swift' %}
+            <div class="w-full h-40 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
+                 style="background-image: url({% static 'images/learning-swift.png' %})">
+            </div>
+        {% else %}
+            <div class="w-full h-40 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
+                 style="background-image: url({{ data.article_series.image.url }})">
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="w-full h-40 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
+             style="background-image: url({{ data.image.url }})">
+        </div>
+    {% endif %}
+
     <div class="flex-1 flex">
         <div class="
         w-[22%] grid place-content-center

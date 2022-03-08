@@ -15,21 +15,26 @@
     <div class="min-h-[calc(100vh-350px)] flex flex-col">
         <div class="dark:bg-[#1c1c1e] flex-1">
             <div class="wrapper">
-                <div class="container mx-auto hidden md:grid grid-cols-12 gap-x-10 py-5 lg:py-8">
+                <div class="container mx-auto hidden lg:grid grid-cols-12 gap-x-10 py-5 lg:py-8">
                     <div class="col-span-9">
-                        <div class="border-b dark:border-stone-500/50 pb-5">
-                            <p class="text-lg text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet pb-2 font-bold uppercase">
-                                <a href="{{ article.article_series.get_absolute_url }}">{{ article.article_series.title|headline }}</a>
-                            </p>
-                            <h1 class="text-prussianBlue dark:text-slate-200 text-4xl lg:text-5xl font-pro font-bold">
+                        <div class="border-b dark:border-stone-500/10 pb-5">
+                            <div class="flex">
+                                <p class="text-lg text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet pb-2 font-bold uppercase">
+                                    <a href="{{ article.article_series.get_absolute_url }}">{{ article.article_series.title|headline }}</a>
+                                </p>
+                            </div>
+                            {#                            <h1 class="text-prussianBlue dark:text-slate-200 text-4xl lg:text-5xl font-pro font-bold">#}
+                            <h1 class="text-4xl lg:text-5xl text-prussianBlue dark:text-color-light font-bold">
                                 {{ article.title|headline }}
                             </h1>
                             <p class="text-lg font-medium py-5">{{ article.summary|capfirst }}</p>
-                            <div class="flex gap-4 items-end">
-                                <p class="font-bold text-stone-500 dark:text-stone-400">kelvin Ude</p>
-                                <time class="">{{ article.published_date|date }}</time>
-                                <time class="italic text-sm text-stone-500 dark:text-stone-600">
-                                    updated: {{ article.updated_date|date }}</time>
+                            <div class="flex-col gap-4 items-end">
+                                <p class="font-bold text-link pb-1">kelvin Ude</p>
+                                <div class="flex gap-4">
+                                    <time class="text-sm font-bold">{{ article.published_date|date }}</time>
+                                    <time class="italic text-sm text-stone-500 dark:text-stone-600">
+                                        updated: {{ article.updated_date|date }}</time>
+                                </div>
                             </div>
                         </div>
 
@@ -39,9 +44,11 @@
                                      class="aspect-auto w-full max-h-[500px] rounded-sm saturate-150">
                             </div>
                         {% endif %}
-                        <div class="prose prose-zinc prose-lg dark:prose-invert
+                        <div class="
+                                    prose prose-lg text-color-dark dark:text-color-light dark:prose-invert
                                     max-w-none my-6 prose-code:!bg-transparent
-                                    dark:prose-code:!bg-transparent prose-h2:mb-2 prose-h3:mb-2 prose-h4:mb-1 prose-h5:mb-1 prose-h6:mb-1">
+                                    dark:prose-code:!bg-transparent prose-h2:mb-2 
+                                    prose-h3:mb-2 prose-h4:mb-1 prose-h5:mb-1 prose-h6:mb-1">
                             {{ article.content|safe }}
                         </div>
                     </div>
@@ -59,20 +66,24 @@
 
                 {# Mobibile #}
                 <div class="container mx-auto py-4">
-                    <div class="flex flex-col md:hidden">
-                        <div class="border-b dark:border-stone-500/50 pb-5">
-                            <p class="text-lg text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet pb-2 font-bold uppercase">
-                                <a href="{{ article.article_series.get_absolute_url }}">{{ article.article_series.title|capfirst }}</a>
-                            </p>
-                            <h1 class="text-prussianBlue dark:text-slate-200 text-4xl lg:text-5xl font-pro font-bold">
+                    <div class="flex flex-col lg:hidden">
+                        <div class="border-b dark:border-stone-500/10 pb-5">
+                            <div class="flex">
+                                <p class="text-lg text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet pb-2 font-bold uppercase">
+                                    <a href="{{ article.article_series.get_absolute_url }}">{{ article.article_series.title|capfirst }}</a>
+                                </p>
+                            </div>
+                            <h1 class="text-prussianBlue dark:text-color-light text-4xl font-bold">
                                 {{ article.title|headline }}
                             </h1>
                             <p class="text-lg font-medium py-5">{{ article.summary|capfirst }}</p>
-                            <div class="flex gap-4">
-                                <p class="font-bold text-stone-500 dark:text-stone-400">kelvin Ude</p>
-                                <p class="">{{ article.published_date|date }}</p>
-                                <p class="italic text-sm text-stone-500 dark:text-stone-600">
-                                    updated: {{ article.updated_date|date }}</p>
+                            <div class="flex-col gap-4 items-end">
+                                <p class="font-bold text-link pb-1">kelvin Ude</p>
+                                <div class="flex gap-4">
+                                    <time class="text-sm font-bold">{{ article.published_date|date }}</time>
+                                    <time class="italic text-sm text-stone-500 dark:text-stone-600">
+                                        updated: {{ article.updated_date|date }}</time>
+                                </div>
                             </div>
                         </div>
                         <div class="py-6">
@@ -80,7 +91,7 @@
                                  class="aspect-auto w-full max-h-[500px] rounded-sm">
                         </div>
                         <div class="py-5">
-                            <div class="prose prose-lg prose-stone dark:prose-invert
+                            <div class="prose prose-lg text-color-dark dark:text-color-light dark:prose-invert
                                         max-w-none prose-code:!bg-transparent
                                         dark:prose-code:!bg-transparent prose-h2:mb-2 prose-h3:mb-2 prose-h4:mb-1 prose-h5:mb-1 prose-h6:mb-1">
                                 {{ article.content|safe }}
@@ -95,7 +106,9 @@
             <div class="wrapper">
                 <div class="container mx-auto py-10">
                     <div class="pb-16">
-                        <div class="py-2 text-stone-800 dark:text-stone-300 text-2xl lg:text-3xl font-bold">Recommended</div>
+                        <div class="py-2 text-stone-800 dark:text-stone-300 text-2xl lg:text-3xl font-bold">
+                            Recommended
+                        </div>
                         <p class="max-w-md text-lg">List of similar articles you might like, to read next, if you're
                             interested.</p>
                     </div>

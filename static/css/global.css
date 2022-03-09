@@ -3318,10 +3318,6 @@ pre > code{
     max-height: 300px;
   }
 
-  .md\:max-h-\[270px\]{
-    max-height: 270px;
-  }
-
   .md\:min-h-\[500px\]{
     min-height: 500px;
   }
@@ -3531,6 +3527,10 @@ pre > code{
 
   .lg\:h-52{
     height: 13rem;
+  }
+
+  .lg\:max-h-\[250px\]{
+    max-height: 250px;
   }
 
   .lg\:min-h-\[500px\]{

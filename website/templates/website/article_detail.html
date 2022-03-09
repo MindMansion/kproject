@@ -52,8 +52,10 @@
                             {{ article.content|safe }}
                         </div>
                     </div>
-                    <div class="col-span-3">
-                        <div class="md:mt-[40px]">
+{#                    <aside class="col-span-3 h-screen sticky top-[140px]">#}
+                    <aside class="col-span-3">
+                        <div class="md:mt-[40px] border-l dark:border-stone-500/50 pl-4">
+{#                        <div class="fixed border-l dark:border-stone-500/50 pl-4">#}
                             <div class="text-lg font-bold">CONTENTS</div>
                             <div class="grid gap-2 mt-1.5 pl-2">
                                 {% for tag, val in article.get_toc %}
@@ -61,7 +63,7 @@
                                 {% endfor %}
                             </div>
                         </div>
-                    </div>
+                    </aside>
                 </div>
 
                 {# Mobibile #}

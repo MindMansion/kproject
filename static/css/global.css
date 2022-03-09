@@ -1042,6 +1042,10 @@ h5, h6 {
 .relative{
   position: relative;
 }
+.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+}
 .inset-y-0{
   top: 0px;
   bottom: 0px;
@@ -1057,6 +1061,9 @@ h5, h6 {
 }
 .-left-1{
   left: -0.25rem;
+}
+.top-\[140px\]{
+  top: 140px;
 }
 .z-10{
   z-index: 10;

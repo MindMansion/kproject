@@ -2,10 +2,9 @@
     <div>
         <div class="text-center max-w-md mx-auto pb-5">
             <div class="text-4xl font-bold font-nunito pb-2">Learning</div>
-            <p class="">Learning Projects and tutorials series written in different language and frameworks such as
-                SwiftUI and more.</p>
+            <p class="px-3 md:px-0 text-lg">Learning Projects and tutorials series written in different language and frameworks.</p>
         </div>
-        <div class="min-h-[600px] border border-stone-500/10 dark:border-stone-900 rounded-md p-3 flex flex-col gap-y-4">
+        <div class="min-h-[300px] border border-stone-500/10 dark:border-stone-900 rounded-md p-3 flex flex-col gap-y-4">
             {% for k, data in swift.items %}
                 {% include 'website/learn/learn-card-swift.html' with lseries=data series=k %}
             {% endfor %}

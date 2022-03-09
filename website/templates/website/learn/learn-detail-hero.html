@@ -3,31 +3,31 @@
 
 <div class="flex flex-col min-h-[450px] justify-between border-b dark:border-none">
     <div class="grid grid-cols-12 gap-6">
-        <div class="col-span-full md:col-span-5">
+        <div class="col-span-full md:col-span-6 lg:col-span-5">
             <p class="text-lg font-bold text-stone-500 dark:text-stone-400 pb-2">{{ data.series.title|headline }}</p>
-            <div class="text-4xl text-prussianBlue dark:text-slate-200 font-bold">{{ data.title|headline }}</div>
-            <p class="text-lg font-medium max-w-md pb-6 pt-5 text-stone-700 dark:text-stone-300">{{ data.summary }}</p>
+            <h1 class="text-4xl text-prussianBlue dark:text-color-light font-bold">{{ data.title|headline }}</h1>
+            <p class="text-lg md:font-medium max-w-md pb-6 pt-5 text-stone-700 dark:text-stone-300">{{ data.summary|capfirst }}</p>
         </div>
-        <div class="col-span-full md:col-span-7 flex w-full justify-center md:justify-end">
+        <div class="col-span-full md:col-span-6 lg:col-span-7 flex w-full justify-center md:justify-end">
             {% if data.image.name|startswith:"default" %}
                 <img src="{{ data.series.image.url }}" alt="Learning post image"
-                 class="aspect-auto w-full md:max-w-[300px] max-h-[280px] rounded-sm saturate-150">
+                 class="aspect-[16/9]] w-full max-h-[250px] md:max-w-[90%] lg:max-w-[75%] md:max-h-[270px] rounded-sm brightness-75">
             {% else %}
                 <img src="{{ data.image.url }}" alt="Learning post image"
-                     class="aspect-auto w-full md:max-w-[300px] max-h-[280px] rounded-sm saturate-150">
+                     class="aspect-[16/9]] w-full max-h-[250px] md:max-w-[90%] lg:max-w-[75%] md:max-h-[270px] rounded-sm brightness-75">
             {% endif %}
         </div>
     </div>
-    <div class="flex flex-col md:flex-row gap-5 md:gap-8 pb-4 pt-10 min-h-[50px] items-center md:items-start justify-between">
+    <div class="flex flex-col md:flex-row gap-8 md:gap-8 pb-4 pt-10 min-h-[50px] items-center md:items-start justify-between">
         <div class="flex gap-4 md:gap-8 min-h-[50px] items-start">
-            <div class="text-stone-500 dark:text-stone-400">
+            <div class="font-bold text-link">
                 Kelvin Ude
             </div>
-            <div class="">
+            <div class="dark:text-color-light">
                 Published: <p
                     class="text-base md:text-lg font-bold text-prussianBlue dark:text-stone-400">{{ data.published_date|date }}</p>
             </div>
-            <div class="">
+            <div class="dark:text-color-light">
                 Updated: <p
                     class="text-base md:text-lg font-bold text-prussianBlue dark:text-stone-400">{{ data.updated_date|date }}</p>
             </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="min-h-full flex gap-2 text-stone-500 dark:text-stone-400 items-center">
                 <a
-                    href="https://twitter.com/intent/tweet?text={{ data.get_absolute_url }}"
+                    href="https://twitter.com/intent/tweet?text=https://kelvinprojects.pythonanywhere.com{{ data.get_absolute_url }}"
                     data-size="large"
                     target="_blank" class="twitter-share-button"
                     >

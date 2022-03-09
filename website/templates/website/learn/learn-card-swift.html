@@ -35,7 +35,7 @@
             </div>
             <div class="flex flex-col gap-y-4 py-5">
                 {% for learn in lseries %}
-                    <div class="flex justify-between items-center">
+                    <div class="flex justify-between items-center gap-x-5">
                         <div class="flex items-center gap-2">
                             <div class="p-2 rounded-full bg-black/5 dark:bg-darkTwo">
                                 <span class="iconify text-xs text-emerald-300 dark:text-emerald-400"
@@ -47,7 +47,7 @@
                         <div class="flex gap-1 items-center">
                             <span class="iconify text-stone-500 text-sm font-medium"
                                   data-icon="bi:clock-history"></span>
-                            <p class="text-stone-700 dark:text-stone-500">{{ learn|learnTime }}</p>
+                            <div class="text-stone-700 dark:text-stone-500 whitespace-nowrap">{{ learn|learnTime }}</div>
                         </div>
                     </div>
                 {% endfor %}

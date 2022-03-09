@@ -1227,6 +1227,9 @@ h5, h6 {
 .max-h-\[280px\]{
   max-height: 280px;
 }
+.max-h-\[250px\]{
+  max-height: 250px;
+}
 .min-h-screen{
   min-height: 100vh;
 }
@@ -1292,6 +1295,16 @@ h5, h6 {
 }
 .w-\[22\%\]{
   width: 22%;
+}
+.w-max{
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.w-min{
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 .min-w-full{
   min-width: 100%;
@@ -1422,6 +1435,9 @@ h5, h6 {
 .gap-5{
   gap: 1.25rem;
 }
+.gap-10{
+  gap: 2.5rem;
+}
 .gap-y-2{
   row-gap: 0.5rem;
 }
@@ -1457,6 +1473,10 @@ h5, h6 {
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
 }
+.gap-x-5{
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+}
 .space-y-2\.5 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1477,6 +1497,9 @@ h5, h6 {
 }
 .place-self-center{
   place-self: center;
+}
+.whitespace-nowrap{
+  white-space: nowrap;
 }
 .rounded-3xl{
   border-radius: 1.5rem;
@@ -1693,6 +1716,10 @@ h5, h6 {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
 .pt-2{
   padding-top: 0.5rem;
 }
@@ -1770,6 +1797,9 @@ h5, h6 {
 }
 .pt-5{
   padding-top: 1.25rem;
+}
+.pb-20{
+  padding-bottom: 5rem;
 }
 .text-left{
   text-align: left;
@@ -3311,6 +3341,14 @@ pre > code{
     max-height: 300px;
   }
 
+  .md\:max-h-\[280px\]{
+    max-height: 280px;
+  }
+
+  .md\:max-h-\[270px\]{
+    max-height: 270px;
+  }
+
   .md\:min-h-\[500px\]{
     min-height: 500px;
   }
@@ -3365,6 +3403,14 @@ pre > code{
 
   .md\:max-w-\[120px\]{
     max-width: 120px;
+  }
+
+  .md\:max-w-\[400px\]{
+    max-width: 400px;
+  }
+
+  .md\:max-w-\[70\%\]{
+    max-width: 70%;
   }
 
   .md\:columns-2{
@@ -3498,6 +3544,14 @@ pre > code{
 
 @media (min-width: 1024px){
 
+  .lg\:col-span-5{
+    grid-column: span 5 / span 5;
+  }
+
+  .lg\:col-span-7{
+    grid-column: span 7 / span 7;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -3536,6 +3590,10 @@ pre > code{
 
   .lg\:max-w-\[90\%\]{
     max-width: 90%;
+  }
+
+  .lg\:max-w-\[75\%\]{
+    max-width: 75%;
   }
 
   .lg\:bg-center{

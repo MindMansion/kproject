@@ -22,7 +22,7 @@
                     grid place-content-center py-8 md:pt-16 lg:pt-24
                     ">
                     <div class="grid place-content-center text-center">
-                        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-prussianBlue dark:text-stone-200 font-pro">
+                        <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-prussianBlue dark:text-stone-200 uppercase">
                             {% if parent.title|lower == 'cpp' %}
                                 C++
                             {% else %}
@@ -40,7 +40,7 @@
                             min-h-[200px] min-w-[300px] md:min-h-[500px] md:min-w-[700px]
                             bg-swift-hero dark:bg-swift-hero-dark bg-contain bg-no-repeat"></div>
                         {% else %}
-                            <img src="{{ parent.image.url }}" alt="" class="aspect-auto max-w-[220px] max-h-[200px]">
+                            <img src="{{ parent.image.url }}" alt="" class="aspect-square max-h-[100px] max-w-[100px] md:max-h-[130px] md:max-w-[130px] mx-auto saturate-200">
                         {% endif %}
                     </div>
                 </div>

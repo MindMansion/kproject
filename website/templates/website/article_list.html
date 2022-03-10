@@ -14,22 +14,22 @@
         <div class="container mx-auto flex flex-col gap-y-8 md:gap-y-16 xl:gap-y-28 my-8">
             <div class="min-h-[400px] grid place-content-center border-b border-stone-400/10 dark:border-stone-500/20">
                 <div class="text-center text-prussianBlue dark:text-color-light">
-                    <div class="text-5xl font-bold">
+                    <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-prussianBlue dark:text-stone-200 uppercase">
                         {% if parent.title == 'cpp' %}
                             C++
                         {% else %}
                             {{ parent.title|headline }}
                         {% endif %}
                     </div>
-                    <p class="text-xl text-color-dark dark:text-color-light max-w-md mx-auto px-2 pt-2 pb-8">{{ parent.summary|capfirst }}</p>
+                    <p class="pt-4 pb-10 px-3 text-lg md:text-xl max-w-lg">{{ parent.summary|capfirst }}</p>
                 </div>
                 <div class="place-self-center">
                     <img src="{{ parent.image.url }}" alt="Article language image"
-                         class="aspect-auto max-h-[130px] max-w-[150px]">
+                         class="aspect-square max-h-[100px] max-w-[100px] md:max-h-[130px] md:max-w-[130px] mx-auto saturate-200">
                 </div>
             </div>
 
-            <div class="columns-1 md:columns-2 gap-x-2 space-y-2.5">
+            <div class="columns-1 md:columns-2 gap-x-4 space-y-4">
                 {% if articles %}
                     {% for article in articles %}
                         {% if article.published %}

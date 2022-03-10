@@ -94,6 +94,16 @@
                                      class="aspect-auto w-full max-h-[500px] rounded-sm">
                             </div>
                         {% endif %}
+
+                        <details class="mt-4 bg-tertiary dark:bg-slate-900 ring-1 ring-black/5 dark:ring-white/10 open:shadow-md p-2 open:p-4 rounded-lg" open>
+                            <summary class="focus:outline-none text-sm leading-6 text-slate-900 dark:text-white font-semibold select-none">CONTENTS</summary>
+                            <div class="grid gap-2 mt-1.5 pl-2">
+                                {% for tag, val in article.get_toc %}
+                                    <p class=" {{ tag|toc }} text-sm border-l-0 -my-0.5 hover:border-l-2 text-stone-500 dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet">{{ val }}</p>
+                                {% endfor %}
+                            </div>
+                        </details>
+
                         <div class="py-5">
                             <div class="prose prose-lg text-color-dark dark:text-color-light dark:prose-invert
                                         max-w-none prose-code:!bg-transparent

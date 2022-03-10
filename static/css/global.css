@@ -1201,9 +1201,6 @@ h5, h6 {
   height: -moz-max-content;
   height: max-content;
 }
-.h-\[250px\]{
-  height: 250px;
-}
 .h-40{
   height: 10rem;
 }
@@ -1222,6 +1219,9 @@ h5, h6 {
 .\!max-h-\[380px\]{
   max-height: 380px !important;
 }
+.max-h-\[250px\]{
+  max-height: 250px;
+}
 .max-h-\[200px\]{
   max-height: 200px;
 }
@@ -1230,9 +1230,6 @@ h5, h6 {
 }
 .max-h-\[230px\]{
   max-height: 230px;
-}
-.max-h-\[250px\]{
-  max-height: 250px;
 }
 .min-h-screen{
   min-height: 100vh;
@@ -3101,9 +3098,8 @@ pre > code{
   background-color: rgb(28 28 30 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-slate-900{
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+.dark .dark\:bg-slate-900\/30{
+  background-color: rgb(15 23 42 / 0.3);
 }
 
 .dark .dark\:bg-transparent{
@@ -3402,8 +3398,8 @@ pre > code{
     max-width: 280px;
   }
 
-  .md\:max-w-\[300px\]{
-    max-width: 300px;
+  .md\:max-w-\[400px\]{
+    max-width: 400px;
   }
 
   .md\:max-w-\[700px\]{

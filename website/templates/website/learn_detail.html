@@ -22,7 +22,7 @@
             <div class="md:wrapper px-2">
                 <div class="container mx-auto grid gap-y-8 md:gap-y-16 xl:gap-y-28 mt-8 md:mt-12 mb-20">
                     <div class="prose dark:prose-invert min-w-full">
-                        <div class="grid gap-y-10 md:gap-y-16">
+                        <div class="grid gap-y-12 md:gap-y-16">
                             {% for item in contents %}
                                 {% if item.content_type == 'FUL' %}
                                     <div class="
@@ -41,8 +41,9 @@
                                     </div>
                                 {% else %}
                                     <div class="grid grid-cols-12 gap-6 md:gap-10">
-                                        <div class=" -mx-2 md:-mx-0 px-3 py-2 border-l-4 border-rose-500/80
-                                            md:border-none col-span-full md:col-span-4
+                                        <div class=" -mx-2 md:-mx-0 px-3 py-2
+{#                                            border-l-4 border-rose-500/80 md:border-none #}
+                                            col-span-full md:col-span-4
                                             h-max bg-tertiary/80 box-content
                                             dark:bg-deepDarkTwo/70 md:rounded-md
 {#                                            prose-p:my-2 prose-h2:my-0 prose-code:!bg-transparent#}

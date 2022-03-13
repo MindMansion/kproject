@@ -1431,6 +1431,9 @@ h5, h6 {
 .gap-y-10{
   row-gap: 2.5rem;
 }
+.gap-y-12{
+  row-gap: 3rem;
+}
 .gap-y-4{
   row-gap: 1rem;
 }

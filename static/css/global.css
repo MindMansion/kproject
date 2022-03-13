@@ -1621,9 +1621,6 @@ h5, h6 {
 .p-2{
   padding: 0.5rem;
 }
-.p-3{
-  padding: 0.75rem;
-}
 .p-4{
   padding: 1rem;
 }
@@ -3117,9 +3114,8 @@ pre > code{
   background-color: transparent;
 }
 
-.dark .dark\:bg-\[\#333336\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(51 51 54 / var(--tw-bg-opacity));
+.dark .dark\:bg-deepDarkTwo\/70{
+  background-color: rgb(10 9 8 / 0.7);
 }
 
 .dark .dark\:bg-black\/80{

@@ -14,7 +14,7 @@
         <div class="bg-top bg-cover" style="background-image: url({% static 'images/blur-bg2.jpg' %})">
              {% include 'website/components/hero.html' %}
         </div>
-        <div class="wrapper">
+        <div class="md:wrapper px-2">
             <div class="container mx-auto grid gap-y-10 md:gap-y-16 xl:gap-y-28 pt-2 pb-16">
                 {% include 'website/article/recent-articles.html' with recents=articles recent=articles_big %}
                 {% include 'website/learn/recent-learn.html' with python=python_lang swift=swift_langs %}

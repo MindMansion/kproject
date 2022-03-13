@@ -19,13 +19,17 @@
             </div>
         </div>
         <div class="dark:bg-[#1c1c1e] flex-1">
-            <div class="wrapper">
+            <div class="md:wrapper px-2">
                 <div class="container mx-auto grid gap-y-8 md:gap-y-16 xl:gap-y-28 mt-8 md:mt-12 mb-20">
                     <div class="prose dark:prose-invert min-w-full">
                         <div class="grid gap-y-4 md:gap-y-16">
                             {% for item in contents %}
                                 {% if item.content_type == 'FUL' %}
-                                    <div>
+                                    <div class="
+                                    prose  text-color-dark dark:text-color-light dark:prose-invert
+                                    max-w-none prose-code:!bg-transparent prose-code:!text-lg prose-code:!font-extrabold
+                                    dark:prose-code:!bg-transparent prose-h2:mb-2
+                                    prose-h3:mb-2 prose-h4:mb-1 prose-h5:mb-1 prose-h6:mb-1">
                                         {{ item.content|safe }}
                                     </div>
 
@@ -37,13 +41,20 @@
                                     </div>
                                 {% else %}
                                     <div class="grid grid-cols-12 gap-6 md:gap-10">
-                                        <div class="
-                                            col-span-full md:col-span-4
-                                            h-max bg-tertiary/50
-                                            dark:bg-deepDark/30 rounded-md px-2
-                                            prose-p:my-2 prose-h2:my-0 prose-code:!bg-transparent
-                                            dark:prose-code:!bg-transparent
-                                            prose-h3:my-0 prose-h4:my-0 prose-h5:my-0">
+                                        <div class=" -mx-2 md:-mx-0 p-3 border-l-4 border-rose-500/80
+                                            md:border-none col-span-full md:col-span-4
+                                            h-max bg-tertiary/80 box-content
+                                            dark:bg-[#333336] md:rounded-md
+{#                                            prose-p:my-2 prose-h2:my-0 prose-code:!bg-transparent#}
+{#                                            dark:prose-code:!bg-transparent#}
+{#                                            prose-h3:my-0 prose-h4:my-0 prose-h5:my-0#}
+
+                                            prose text-color-dark dark:text-color-light dark:prose-invert
+                                            max-w-none prose-code:!bg-transparent prose-code:!text-lg prose-code:!font-extrabold
+                                            dark:prose-code:!bg-transparent prose-h2:mb-2
+                                            prose-h3:mb-2 prose-h4:mb-1 prose-h5:mb-1 prose-h6:mb-1
+
+                                            ">
                                             {{ item.content|safe }}
                                         </div>
                                         <div class="col-span-full md:col-span-8 prose-pre:my-0">

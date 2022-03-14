@@ -408,6 +408,18 @@ h5, h6 {
     font-weight: bold !important;
   }
 
+.reset-titles :is(:where(h2):not(:where([class~="not-prose"] *))){
+  line-height: 1.25rem;
+}
+
+.reset-titles :is(:where(h3):not(:where([class~="not-prose"] *))){
+  line-height: 1.25rem;
+}
+
+.reset-titles :is(:where(h4):not(:where([class~="not-prose"] *))){
+  line-height: 1.25rem;
+}
+
 *, ::before, ::after{
   --tw-translate-x: 0;
   --tw-translate-y: 0;

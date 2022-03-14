@@ -2990,6 +2990,10 @@ pre > code{
   margin-bottom: 0px;
 }
 
+.prose-h2\:mb-1 :is(:where(h2):not(:where([class~="not-prose"] *))){
+  margin-bottom: 0.25rem;
+}
+
 .prose-h2\:mb-2 :is(:where(h2):not(:where([class~="not-prose"] *))){
   margin-bottom: 0.5rem;
 }
@@ -3005,6 +3009,10 @@ pre > code{
 
 .prose-h3\:mb-0 :is(:where(h3):not(:where([class~="not-prose"] *))){
   margin-bottom: 0px;
+}
+
+.prose-h3\:mb-1 :is(:where(h3):not(:where([class~="not-prose"] *))){
+  margin-bottom: 0.25rem;
 }
 
 .prose-h3\:mb-2 :is(:where(h3):not(:where([class~="not-prose"] *))){

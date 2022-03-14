@@ -409,15 +409,15 @@ h5, h6 {
   }
 
 .reset-titles :is(:where(h2):not(:where([class~="not-prose"] *))){
-  line-height: 1.25rem;
+  line-height: 1;
 }
 
 .reset-titles :is(:where(h3):not(:where([class~="not-prose"] *))){
-  line-height: 1.25rem;
+  line-height: 1;
 }
 
 .reset-titles :is(:where(h4):not(:where([class~="not-prose"] *))){
-  line-height: 1.25rem;
+  line-height: 1;
 }
 
 *, ::before, ::after{

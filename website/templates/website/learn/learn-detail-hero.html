@@ -23,17 +23,17 @@
             <div class="font-bold text-link">
                 Kelvin Ude
             </div>
-            <div class="dark:text-color-light">
+            <div class="dark:text-color-light text-sm">
                 Published: <p
-                    class="text-base md:text-lg font-bold text-prussianBlue dark:text-stone-400">{{ data.published_date|date }}</p>
+                    class="text-sm md:text-lg font-medium text-prussianBlue dark:text-stone-400">{{ data.published_date|date }}</p>
             </div>
-            <div class="dark:text-color-light">
+            <div class="dark:text-color-light text-sm">
                 Updated: <p
-                    class="text-base md:text-lg font-bold text-prussianBlue dark:text-stone-400">{{ data.updated_date|date }}</p>
+                    class="text-sm md:text-lg font-medium text-prussianBlue dark:text-stone-400">{{ data.updated_date|date }}</p>
             </div>
         </div>
         <div class="min-h-full flex gap-4 md:gap-5">
-            <div class="text-3xl font-bold text-prussianBlue dark:text-stone-400">
+            <div class="text-3xl font-medium text-prussianBlue dark:text-stone-400">
                 {{ data|learnTime|slice:":1" }}<span class="text-xl">min</span>
             </div>
             <div class="min-h-full flex gap-2 text-stone-500 dark:text-stone-400 items-center">

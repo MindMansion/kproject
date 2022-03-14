@@ -38,8 +38,8 @@
                 {% endif %}
 
                 {% if swift_langs %}
-                    <div class="grid gap-y-2 -mx-2 md:-mx-0">
-                        <div class="text-xl font-bold pl-2 md:pl-0">
+                    <div class="grid gap-y-8 md:gap-y-2 -mx-2 md:-mx-0">
+                        <div class="text-xl font-bold pl-2 md:pl-0 -mb-8 md:-mb-2">
                             Swift Tutorials
                         </div>
                         {% for k, series_obj in swift_langs.items %}
@@ -50,7 +50,7 @@
                             </div>
                         {% endfor %}
                         {% if swift_langs.items|length > 1 %}
-                            <div class="flex justify-end">
+                            <div class="flex justify-end -mt-8 md:-mt-2">
                                 <a href="/learn/swift" class="text-sm text-emerald-500">view more</a>
                             </div>
                         {% endif %}
@@ -59,8 +59,8 @@
 
 
                 {% if python_lang %}
-                    <div class="grid gap-y-2 -mx-2 md:-mx-0">
-                        <div class="text-xl font-bold pl-2 md:pl-0">
+                    <div class="grid gap-y-8 md:gap-y-2 -mx-2 md:-mx-0">
+                        <div class="text-xl font-bold pl-2 md:pl-0 -mb-8 md:-mb-2">
                             Python Tutorials
                         </div>
                         {% for k, series_obj in python_lang.items %}
@@ -75,7 +75,7 @@
                                 {% endif %}
                             </div>
                         {% endfor %}
-                        <div class="flex justify-end">
+                        <div class="flex justify-end -mt-8 md:-mt-2">
                             <div class="flex justify-end">
                                 <a href="/learn/python" class="text-sm text-emerald-500">view more</a>
                             </div>
@@ -84,8 +84,8 @@
                 {% endif %}
 
                 {% if cpp_langs %}
-                    <div class="grid gap-y-2 -mx-2 md:-mx-0">
-                        <div class="text-xl font-bold pl-2 md:pl-0">
+                    <div class="grid gap-y-8 md:gap-y-2 -mx-2 md:-mx-0">
+                        <div class="text-xl font-bold pl-2 md:pl-0 -mb-8 md:-mb-2">
                             C++ Tutorials
                         </div>
                         {% for k, series_obj in cpp_langs.items %}
@@ -100,7 +100,7 @@
                                 {% endif %}
                             </div>
                         {% endfor %}
-                        <div class="flex justify-end">
+                        <div class="flex justify-end -mt-8 md:-mt-2">
                             <div class="flex justify-end">
                                 <a href="/learn/cpp" class="text-sm text-emerald-500">view more</a>
                             </div>

@@ -750,6 +750,7 @@ h5, h6 {
 .prose :where(p):not(:where([class~="not-prose"] *)){
   margin-top: 1.25em;
   margin-bottom: 1.25em;
+  font-size: 1.1rem;
 }
 .prose :where(img):not(:where([class~="not-prose"] *)){
   margin-top: 2em;
@@ -772,6 +773,7 @@ h5, h6 {
 .prose :where(li):not(:where([class~="not-prose"] *)){
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  font-size: 1.1rem;
 }
 .prose :where(ol > li):not(:where([class~="not-prose"] *)){
   padding-left: 0.375em;
@@ -1124,6 +1126,12 @@ h5, h6 {
 .mt-10{
   margin-top: 2.5rem;
 }
+.-mb-8{
+  margin-bottom: -2rem;
+}
+.-mt-8{
+  margin-top: -2rem;
+}
 .mt-8{
   margin-top: 2rem;
 }
@@ -1192,8 +1200,8 @@ h5, h6 {
 .h-40{
   height: 10rem;
 }
-.h-\[100px\]{
-  height: 100px;
+.h-\[80px\]{
+  height: 80px;
 }
 .h-\[200px\]{
   height: 200px;
@@ -1251,6 +1259,9 @@ h5, h6 {
 }
 .min-h-\[100px\]{
   min-height: 100px;
+}
+.min-h-\[80px\]{
+  min-height: 80px;
 }
 .min-h-\[450px\]{
   min-height: 450px;
@@ -3114,8 +3125,8 @@ pre > code{
   background-color: transparent;
 }
 
-.dark .dark\:bg-deepDarkTwo\/70{
-  background-color: rgb(10 9 8 / 0.7);
+.dark .dark\:bg-deepDarkTwo\/60{
+  background-color: rgb(10 9 8 / 0.6);
 }
 
 .dark .dark\:bg-black\/80{
@@ -3327,6 +3338,14 @@ pre > code{
     margin-top: 4rem;
   }
 
+  .md\:-mb-2{
+    margin-bottom: -0.5rem;
+  }
+
+  .md\:-mt-2{
+    margin-top: -0.5rem;
+  }
+
   .md\:mt-12{
     margin-top: 3rem;
   }
@@ -3351,8 +3370,8 @@ pre > code{
     height: 200px;
   }
 
-  .md\:h-\[120px\]{
-    height: 120px;
+  .md\:h-\[110px\]{
+    height: 110px;
   }
 
   .md\:h-full{
@@ -3391,8 +3410,8 @@ pre > code{
     min-height: 140px;
   }
 
-  .md\:min-h-\[130px\]{
-    min-height: 130px;
+  .md\:min-h-\[120px\]{
+    min-height: 120px;
   }
 
   .md\:min-h-full{
@@ -3500,12 +3519,20 @@ pre > code{
     row-gap: 4rem;
   }
 
+  .md\:gap-y-2{
+    row-gap: 0.5rem;
+  }
+
   .md\:gap-y-10{
     row-gap: 2.5rem;
   }
 
   .md\:gap-y-12{
     row-gap: 3rem;
+  }
+
+  .md\:gap-y-4{
+    row-gap: 1rem;
   }
 
   .md\:rounded-md{

@@ -3,7 +3,7 @@
 
 <div class="
     border dark:border-stone-500/10 bg-tertiary dark:bg-darkTwo
-    rounded-md min-h-[100px] md:min-h-[130px] flex gap-x-3 p-2 mb-2
+    rounded-md min-h-[80px] md:min-h-[120px] flex gap-x-3 p-2 mb-2
     group
     break-inside-avoid-column
     "
@@ -11,10 +11,10 @@
     <div>
         {% if data.no_image %}
             <img src="{{ data.article_series.image.url }}" alt="Article image"
-                 class="aspect-square h-[100px] md:h-[120px] md:max-w-[120px] rounded-md">
+                 class="aspect-square h-[80px] md:h-[110px] md:max-w-[120px] rounded-md">
         {% else %}
             <img src="{{ data.image.url }}" alt="Article image"
-                 class="aspect-square h-[100px] md:h-[120px] md:max-w-[120px] rounded-md">
+                 class="aspect-square h-[80px] md:h-[110px] md:max-w-[120px] rounded-md">
         {% endif %}
     </div>
 

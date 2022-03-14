@@ -4,7 +4,7 @@
             <div class="text-4xl font-bold font-nunito pb-2">Learning</div>
             <p class="px-3 md:px-0 text-lg">Learning Projects and tutorials series written in different language and frameworks.</p>
         </div>
-        <div class="min-h-[300px] lg:border border-stone-500/10 dark:border-stone-900 lg:rounded-md lg:p-3 flex flex-col gap-y-4">
+        <div class="min-h-[300px] lg:border border-stone-500/10 dark:border-stone-900 lg:rounded-md lg:p-3 flex flex-col gap-y-8 md:gap-y-4">
             {% for k, data in swift.items %}
                 {% include 'website/learn/learn-card-swift.html' with lseries=data series=k %}
             {% endfor %}

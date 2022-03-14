@@ -1861,8 +1861,8 @@ h5, h6 {
 .font-extrabold{
   font-weight: 800;
 }
-.\!font-medium{
-  font-weight: 500 !important;
+.\!font-bold{
+  font-weight: 700 !important;
 }
 .uppercase{
   text-transform: uppercase;
@@ -1879,11 +1879,11 @@ h5, h6 {
 .leading-6{
   line-height: 1.5rem;
 }
-.leading-normal{
-  line-height: 1.5;
-}
 .\!leading-6{
   line-height: 1.5rem !important;
+}
+.leading-normal{
+  line-height: 1.5;
 }
 .tracking-wider{
   letter-spacing: 0.05em;
@@ -2833,6 +2833,16 @@ pre > code{
   font-style: italic;
 }
 
+.marker\:text-stone-800 *::marker{
+  --tw-text-opacity: 1;
+  color: rgb(41 37 36 / var(--tw-text-opacity));
+}
+
+.marker\:text-stone-800::marker{
+  --tw-text-opacity: 1;
+  color: rgb(41 37 36 / var(--tw-text-opacity));
+}
+
 .placeholder\:italic::-moz-placeholder{
   font-style: italic;
 }
@@ -2960,6 +2970,14 @@ pre > code{
   margin-bottom: 0px;
 }
 
+.prose-h2\:mb-0\.5 :is(:where(h2):not(:where([class~="not-prose"] *))){
+  margin-bottom: 0.125rem;
+}
+
+.prose-h2\:mb-0 :is(:where(h2):not(:where([class~="not-prose"] *))){
+  margin-bottom: 0px;
+}
+
 .prose-h2\:mb-2 :is(:where(h2):not(:where([class~="not-prose"] *))){
   margin-bottom: 0.5rem;
 }
@@ -2969,12 +2987,28 @@ pre > code{
   margin-bottom: 0px;
 }
 
+.prose-h3\:mb-0\.5 :is(:where(h3):not(:where([class~="not-prose"] *))){
+  margin-bottom: 0.125rem;
+}
+
+.prose-h3\:mb-0 :is(:where(h3):not(:where([class~="not-prose"] *))){
+  margin-bottom: 0px;
+}
+
 .prose-h3\:mb-2 :is(:where(h3):not(:where([class~="not-prose"] *))){
   margin-bottom: 0.5rem;
 }
 
 .prose-h4\:my-0 :is(:where(h4):not(:where([class~="not-prose"] *))){
   margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.prose-h4\:mb-0\.5 :is(:where(h4):not(:where([class~="not-prose"] *))){
+  margin-bottom: 0.125rem;
+}
+
+.prose-h4\:mb-0 :is(:where(h4):not(:where([class~="not-prose"] *))){
   margin-bottom: 0px;
 }
 
@@ -3250,6 +3284,16 @@ pre > code{
   --tw-ring-color: rgb(255 255 255 / 0.1);
 }
 
+.dark .dark\:marker\:text-stone-100 *::marker{
+  --tw-text-opacity: 1;
+  color: rgb(245 245 244 / var(--tw-text-opacity));
+}
+
+.dark .dark\:marker\:text-stone-100::marker{
+  --tw-text-opacity: 1;
+  color: rgb(245 245 244 / var(--tw-text-opacity));
+}
+
 .dark .dark\:hover\:border-bitterSweet\/50:hover{
   border-color: rgb(255 113 91 / 0.5);
 }
@@ -3418,10 +3462,6 @@ pre > code{
     min-height: 100%;
   }
 
-  .md\:min-h-\[300px\]{
-    min-height: 300px;
-  }
-
   .md\:w-\[500px\]{
     width: 500px;
   }
@@ -3563,11 +3603,6 @@ pre > code{
   .md\:px-0{
     padding-left: 0px;
     padding-right: 0px;
-  }
-
-  .md\:py-0{
-    padding-top: 0px;
-    padding-bottom: 0px;
   }
 
   .md\:pl-0{
@@ -3723,6 +3758,11 @@ pre > code{
   .lg\:py-8{
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .lg\:py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .lg\:pt-24{

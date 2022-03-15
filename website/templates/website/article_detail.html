@@ -47,9 +47,13 @@
                         <div class="
                                     prose text-color-dark dark:text-color-light dark:prose-invert
                                     max-w-none my-6 prose-code:!bg-transparent marker:text-stone-800 dark:marker:text-stone-100
-                                    dark:prose-code:!bg-transparent prose-h2:mb-0.5 reset-titles
+                                    dark:prose-code:!bg-transparent prose-h2:mb-0.5 prose-pre:mt-5 reset-titles
                                     prose-h3:mb-0.5 prose-h4:mb-0.5 prose-h5:mb-0.5 prose-h6:mb-0.5">
                             {{ article.content|safe }}
+                        </div>
+
+                        <div class="mt-32">
+                            {% include 'components/author.html' %}
                         </div>
                     </div>
 {#                    <aside class="col-span-3 h-screen sticky top-[140px]">#}
@@ -105,12 +109,17 @@
                         </details>
 
                         <div class="py-5">
-                            <div class="prose text-color-dark dark:text-color-light dark:prose-invert
+                            <div class="prose text-color-dark dark:text-color-light dark:prose-invert prose-pre:mt-5
                                         max-w-none prose-code:!bg-transparent marker:text-stone-800 dark:marker:text-stone-100 reset-titles
                                         dark:prose-code:!bg-transparent prose-h2:mb-1 prose-h3:mb-1 prose-h4:mb-1 prose-h5:mb-0.5 prose-h6:mb-0.5">
                                 {{ article.content|safe }}
                             </div>
                         </div>
+
+                         <div class="mt-32">
+                            {% include 'components/author.html' %}
+                        </div>
+
                     </div>
                 </div>
 
@@ -120,10 +129,10 @@
             <div class="wrapper">
                 <div class="container mx-auto py-10">
                     <div class="pb-16">
-                        <div class="py-2 text-stone-800 dark:text-stone-300 text-2xl lg:text-3xl font-bold">
+                        <div class="py-2 text-stone-800 dark:text-stone-500 text-2xl lg:text-3xl font-bold">
                             Recommended
                         </div>
-                        <p class="max-w-md text-lg">List of similar articles you might like, to read next, if you're
+                        <p class="max-w-md text-lg text-stone-600 dark:text-stone-300 leading-6">List of similar articles you might like, to read next, if you're
                             interested.</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

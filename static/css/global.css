@@ -2727,8 +2727,7 @@ pre:focus{
 }
 
 .dark pre{
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(63 63 70 / var(--tw-border-opacity)) !important;
+  border-color: rgb(63 63 70 / 0.5) !important;
   --tw-text-opacity: 1 !important;
   color: rgb(220 220 220 / var(--tw-text-opacity)) !important;
   --tw-ring-opacity: 1 !important;
@@ -2744,8 +2743,7 @@ pre, code {
 }
 
 .dark pre, .dark code{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(12 9 13 / var(--tw-bg-opacity)) !important;
+  background-color: rgb(12 9 13 / 0.25) !important;
 }
 
 @media (min-width: 768px){
@@ -3251,6 +3249,10 @@ pre > code{
 
 .dark .dark\:border-stone-500\/40{
   border-color: rgb(120 113 108 / 0.4);
+}
+
+.dark .dark\:border-stone-500\/30{
+  border-color: rgb(120 113 108 / 0.3);
 }
 
 .dark .dark\:border-stone-600\/60{

@@ -13,8 +13,9 @@
 
 {% block content %}
     <div class="font-ff">
-        <div class="relative min-h-[200px] md:min-h-[500px] bg-cover" style="background-image: url({% static "images/bg-blurred.jpg" %});">
-            <div class="w-full min-h-full bg-tertiary/50 dark:bg-black/80">
+        <div class="relative min-h-[200px] md:min-h-[500px] bg-cover saturate-200"
+             style="background-image: url({% static "images/bg-blurred.jpg" %});">
+            <div class="w-full min-h-full bg-tertiary/60 dark:bg-black/80 backdrop-filter backdrop-blur-xl">
             <div class="wrapper">
                 <div class="
                     min-h-[200px] md:min-h-[500px]

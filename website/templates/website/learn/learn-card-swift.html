@@ -20,7 +20,8 @@
                 <div class="flex items-center justify-center pt-2.5">
                     <span class="iconify text-2xl text-emerald-300 dark:text-emerald-400"
                           data-icon="fluent:folder-add-20-regular"></span>
-                    <div class="text-xl font-medium text-center text-stone-500 ml-1.5">{{ lseries.0.tag.all.0.title|headline }}</div>
+{#                    <div class="text-xl font-medium text-center text-stone-500 ml-1.5">{{ lseries.0.tag.all.0.title|headline }}</div>#}
+                    <div class="text-xl font-medium text-center text-bitterSweet ml-1.5">{{ lseries.0.tag.all.0.title|headline }}</div>
                 </div>
             </div>
             <div class="">
@@ -40,7 +41,7 @@
                 {% for learn in lseries %}
                     <div class="flex justify-between items-center gap-x-5">
                         <div class="flex items-center gap-2">
-                            <div class="p-2 rounded-full bg-black/10 dark:bg-tertiary/10">
+                            <div class="p-2 rounded-full bg-black/5 dark:bg-tertiary/5">
                                 <span class="iconify text-xs text-emerald-300 dark:text-emerald-400"
                                       data-icon="akar-icons:check-box-fill"></span>
                             </div>

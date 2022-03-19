@@ -16,7 +16,8 @@
                     drop-shadow-md rounded-tl-3xl rounded-br-3xl p-4
                     text-center
                 ">
-                <div class="text-4xl font-bold font-roboto text-emerald-300 dark:text-emerald-400">
+{#                <div class="text-4xl font-bold font-roboto text-emerald-300 dark:text-emerald-400">#}
+                <div class="text-4xl font-bold font-roboto text-bitterSweet">
                     {% if lseries.0.tag.all.0.title == 'machine learning'%}
                             Machine/L
                         {% else %}
@@ -34,7 +35,7 @@
             {% for learn in lseries %}
                 <div class="flex justify-between items-center">
                     <div class="flex items-center gap-2">
-                        <div class="p-2 rounded-full bg-black/10 dark:bg-tertiary/10">
+                        <div class="p-2 rounded-full bg-black/5 dark:bg-tertiary/5">
                             <span class="iconify text-xs text-emerald-300 dark:text-emerald-400" data-icon="akar-icons:check-box-fill"></span>
                         </div>
                         <a href="{{ learn.get_absolute_url }}"
@@ -42,7 +43,7 @@
                     </div>
                     <div class="flex gap-1 items-center">
                         <span class="iconify text-stone-500 text-sm font-medium" data-icon="bi:clock-history"></span>
-                        <p class="text-stone-700 dark:text-stone-500">{{ learn|learnTime }}</p>
+                        <p class="text-stone-700 dark:text-stone-500 whitespace-nowrap">{{ learn|learnTime }}</p>
                     </div>
                 </div>
             {% endfor %}

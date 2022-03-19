@@ -1154,9 +1154,6 @@ h5, h6 {
 .mt-10{
   margin-top: 2.5rem;
 }
-.-mb-8{
-  margin-bottom: -2rem;
-}
 .-mt-8{
   margin-top: -2rem;
 }
@@ -1637,9 +1634,6 @@ h5, h6 {
 .bg-tertiary\/80{
   background-color: rgb(250 250 250 / 0.8);
 }
-.bg-tertiary\/50{
-  background-color: rgb(250 250 250 / 0.5);
-}
 .bg-white\/80{
   background-color: rgb(255 255 255 / 0.8);
 }
@@ -2085,6 +2079,11 @@ h5, h6 {
 }
 .backdrop-blur-md{
   --tw-backdrop-blur: blur(12px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-blur-xl{
+  --tw-backdrop-blur: blur(24px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
@@ -3355,6 +3354,10 @@ pre > code{
   background-color: rgb(0 0 0 / 0.3);
 }
 
+.dark .dark\:bg-tertiary\/5{
+  background-color: rgb(250 250 250 / 0.05);
+}
+
 .dark .dark\:bg-about-bg-dark-two{
   background-image: linear-gradient(346deg, rgba(55, 55, 55,0.04) 0%, rgba(55, 55, 55,0.04) 22%,rgba(140, 140, 140,0.04) 22%, rgba(140, 140, 140,0.04) 69%,rgba(225, 225, 225,0.04) 69%, rgba(225, 225, 225,0.04) 100%),linear-gradient(31deg, rgba(55, 55, 55,0.04) 0%, rgba(55, 55, 55,0.04) 42%,rgba(140, 140, 140,0.04) 42%, rgba(140, 140, 140,0.04) 85%,rgba(225, 225, 225,0.04) 85%, rgba(225, 225, 225,0.04) 100%),linear-gradient(55deg, rgba(55, 55, 55,0.04) 0%, rgba(55, 55, 55,0.04) 13%,rgba(140, 140, 140,0.04) 13%, rgba(140, 140, 140,0.04) 72%,rgba(225, 225, 225,0.04) 72%, rgba(225, 225, 225,0.04) 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));;
 }
@@ -3567,10 +3570,6 @@ pre > code{
     margin-top: 4rem;
   }
 
-  .md\:-mb-1{
-    margin-bottom: -0.25rem;
-  }
-
   .md\:-mt-1{
     margin-top: -0.25rem;
   }
@@ -3744,20 +3743,12 @@ pre > code{
     row-gap: 4rem;
   }
 
-  .md\:gap-y-2{
-    row-gap: 0.5rem;
-  }
-
   .md\:gap-y-10{
     row-gap: 2.5rem;
   }
 
   .md\:gap-y-12{
     row-gap: 3rem;
-  }
-
-  .md\:gap-y-4{
-    row-gap: 1rem;
   }
 
   .md\:rounded-md{

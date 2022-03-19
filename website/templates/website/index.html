@@ -14,22 +14,28 @@
         <div class="bg-top bg-cover saturate-200" style="background-image: url({% static 'images/blur-bg2.jpg' %})">
             {% include 'website/components/hero.html' %}
         </div>
-        <div class="md:wrapper px-2 py-16">
-            <div class="container mx-auto">
-                {% include 'website/article/recent-articles.html' with smalls=articles bigs=articles_big %}
-            </div>
-        </div>
-        <div class="bg-tertiary/90 dark:bg-dark/50 py-16">
-            <div class="md:wrapper px-2">
+        {% if articles or articles_big %}
+            <div class="md:wrapper px-2 py-16">
                 <div class="container mx-auto">
-                    {% include 'website/learn/recent-learn.html' with python=python_lang swift=swift_langs %}
+                    {% include 'website/article/recent-articles.html' with smalls=articles bigs=articles_big %}
                 </div>
             </div>
-        </div>
-        <div class="md:wrapper px-2 py-16">
-            <div class="container mx-auto">
-                {% include 'website/project/recent-projects.html' with projects=projects %}
+        {% endif %}
+        {% if python_lang or swift_langs %}
+            <div class="bg-tertiary/90 dark:bg-dark/50 py-16">
+                <div class="md:wrapper px-2">
+                    <div class="container mx-auto">
+                        {% include 'website/learn/recent-learn.html' with python=python_lang swift=swift_langs %}
+                    </div>
+                </div>
             </div>
-        </div>
+        {% endif %}
+        {% if projects %}
+            <div class="md:wrapper px-2 py-16">
+                <div class="container mx-auto">
+                    {% include 'website/project/recent-projects.html' with projects=projects %}
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

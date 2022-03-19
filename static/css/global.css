@@ -1788,6 +1788,9 @@ h5, h6 {
 .pb-2{
   padding-bottom: 0.5rem;
 }
+.pt-8{
+  padding-top: 2rem;
+}
 .pb-6{
   padding-bottom: 1.5rem;
 }
@@ -1808,9 +1811,6 @@ h5, h6 {
 }
 .pb-10{
   padding-bottom: 2.5rem;
-}
-.pt-8{
-  padding-top: 2rem;
 }
 .pb-4{
   padding-bottom: 1rem;
@@ -2406,8 +2406,7 @@ h5, h6 {
 
 .dark .info-box{
   border-color: rgb(94 234 212 / 0.2);
-  --tw-bg-opacity: 1;
-  background-color: rgb(28 28 30 / var(--tw-bg-opacity));
+  background-color: rgb(25 25 35 / 0.5);
 }
 
 
@@ -2456,8 +2455,7 @@ h5, h6 {
 
 
 .dark .info-box-caption{
-  --tw-bg-opacity: 1;
-  background-color: rgb(32 33 36 / var(--tw-bg-opacity));
+  background-color: rgb(12 9 13 / 0.5);
 }
 
 
@@ -2572,7 +2570,7 @@ h5, h6 {
 }
 
 .toc-h4{
-  margin-left: 1.75rem;
+  margin-left: 2rem;
   padding-left: 0.25rem;
 }
 
@@ -2737,7 +2735,8 @@ pre:focus{
   --tw-ring-color: rgb(94 234 212 / var(--tw-ring-opacity)) !important;
 }
 
-pre, code{
+pre, code {
+  /*dark:bg-[#202025] */
   background-color: rgb(244 244 245 / 0.5) !important;
   font-size: 1rem !important;
   font-weight: 500 !important;
@@ -2746,7 +2745,7 @@ pre, code{
 
 .dark pre, .dark code{
   --tw-bg-opacity: 1 !important;
-  background-color: rgb(32 32 37 / var(--tw-bg-opacity)) !important;
+  background-color: rgb(12 9 13 / var(--tw-bg-opacity)) !important;
 }
 
 @media (min-width: 768px){
@@ -3624,6 +3623,10 @@ pre > code{
 
   .md\:max-h-\[300px\]{
     max-height: 300px;
+  }
+
+  .md\:min-h-\[450px\]{
+    min-height: 450px;
   }
 
   .md\:min-h-\[500px\]{

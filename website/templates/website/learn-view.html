@@ -50,12 +50,12 @@
                                     {% endif %}
                                 </div>
                             {% endfor %}
-                            {% if swift_langs.items|length > 1 %}
-                                <div class="flex justify-end -mt-8 md:-mt-1">
-                                    <a href="/learn/swift" class="text-sm text-emerald-500">view more</a>
-                                </div>
-                            {% endif %}
                         </div>
+                        {% if swift_langs.items|length > 1 %}
+                            <div class="flex justify-end mt-1">
+                                <a href="/learn/swift" class="text-sm text-emerald-500">view more</a>
+                            </div>
+                        {% endif %}
                     </div>
                 {% endif %}
 
@@ -78,10 +78,10 @@
                                     {% endif %}
                                 </div>
                             {% endfor %}
-                            <div class="flex justify-end -mt-8 md:-mt-1">
-                                <div class="flex justify-end">
-                                    <a href="/learn/python" class="text-sm text-emerald-500">view more</a>
-                                </div>
+                        </div>
+                        <div class="flex justify-end mt-1">
+                            <div class="flex justify-end">
+                                <a href="/learn/python" class="text-sm text-emerald-500">view more</a>
                             </div>
                         </div>
                     </div>
@@ -105,10 +105,10 @@
                                     {% endif %}
                                 </div>
                             {% endfor %}
-                            <div class="flex justify-end -mt-8 md:-mt-1">
-                                <div class="flex justify-end">
-                                    <a href="/learn/cpp" class="text-sm text-emerald-500">view more</a>
-                                </div>
+                        </div>
+                        <div class="flex justify-end mt-1">
+                            <div class="flex justify-end">
+                                <a href="/learn/cpp" class="text-sm text-emerald-500">view more</a>
                             </div>
                         </div>
                     </div>

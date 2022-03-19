@@ -15,7 +15,8 @@
                 <div class="flex justify-between items-center">
                     <div class="flex items-center gap-2">
                         <div class="p-2 rounded-full bg-black/5 dark:bg-tertiary/10">
-                            <span class="iconify text-xs text-emerald-300 dark:text-emerald-400" data-icon="akar-icons:check-box-fill"></span>
+                            <span class="iconify text-xs text-emerald-300 dark:text-emerald-400"
+                                  data-icon="akar-icons:check-box-fill"></span>
                         </div>
                         <a href="{{ learn.get_absolute_url }}"
                            class="text-prussianBlue dark:text-stone-400 hover:text-bitterSweet dark:hover:text-bitterSweet">{{ learn.title|headline }}</a>
@@ -38,15 +39,19 @@
                     drop-shadow-md rounded-tl-3xl rounded-br-3xl p-4
                     text-center
                 ">
-{#                <div class="text-4xl text-emerald-300 dark:text-emerald-400 font-roboto font-bold">#}
-                <div class="text-4xl text-bitterSweet font-roboto font-bold">
+                {#                <div class="text-4xl text-emerald-300 dark:text-emerald-400 font-roboto font-bold">#}
+                <div class="text-2xl md:text-3xl text-bitterSweet font-roboto font-bold">
                     {% if lseries.0.tag.all.0.title == 'machine learning' %}
-                        Machine/L
+                        <div class="leading-none">
+                            Machine
+                            <p>Learning</p>
+                        </div>
                     {% else %}
                         {{ lseries.0.tag.all.0.title|title }}
                     {% endif %}
                 </div>
-                <div class="text-4xl font-medium text-white">{{ lseries|readtime }}<span class="text-3xl">min</span></div>
+                <div class="text-4xl font-medium text-white">{{ lseries|readtime }}<span class="text-3xl">min</span>
+                </div>
             </div>
         </div>
     </div>

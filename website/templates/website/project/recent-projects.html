@@ -1,23 +1,21 @@
 {% load website_extras %}
 
 {% if projects %}
-    <div>
-        <div class="text-center max-w-md mx-auto pb-5">
-            <div class="text-4xl font-bold font-nunito pb-2">Projects</div>
-            <p class="px-3 md:px-0 text-lg">Projects build and ready for use, for different platforms using different languages and
+    <div class="font-ff">
+        <div class="text-center dark:text-[#EEE5E9] max-w-md mx-auto pb-8">
+            <div class="text-4xl font-bold font-roboto pb-2">Projects</div>
+            <p class="px-3 md:px-0 pb-6 text-lg">Projects build and ready for use, for different platforms using different
+                languages and
                 frameworks</p>
         </div>
-        <div class="min-h-[600px] lg:border border-stone-500/10 dark:border-stone-900 lg:rounded-md lg:p-3">
-            <div class="grid gap-y-4">
-                {% for project in projects %}
-                    {% if forloop.counter0 == 1 %}
-                        {% include 'website/project/project-card.html'  with data=project %}
-                    {% else %}
-                        {% include 'website/project/project-cardl.html' with data=project %}
-                    {% endif %}
-                {% endfor %}
-
-            </div>
+        <div class="grid gap-y-4">
+            {% for project in projects %}
+                {% if forloop.counter0 == 1 %}
+                    {% include 'website/project/project-card.html'  with data=project %}
+                {% else %}
+                    {% include 'website/project/project-cardl.html' with data=project %}
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endif %}

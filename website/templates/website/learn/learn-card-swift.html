@@ -4,20 +4,23 @@
         grid grid-cols-10 gap-5
         box-content
         md:border dark:border-stone-500/10
-        bg-tertiary dark:bg-darkTwo
+{#        bg-tertiary dark:bg-darkTwo#}
+{#        bg-tertiary dark:bg-[#161617]#}
+{#        bg-tertiary dark:bg-[#161619]#}
+        bg-tertiary dark:bg-main-secondary
         md:rounded-sm  px-3
         ">
     <div class="col-span-full md:col-span-4">
         <div class="h-full flex flex-col py-5">
             <div class="flex-1 py-10 grid place-content-center">
                 <div class="text-4xl font-medium text-prussianBlue dark:text-stone-400"><span
-                        class="text-xl font-bold tracking-tighter pr-1.5">EST</span>{{ lseries|readtime }}<span
+                        class="text-2xl font-bold tracking-tighter pr-1.5">EST</span>{{ lseries|readtime }}<span
                         class="text-3xl pl-0.5">min</span></div>
 
                 <div class="flex items-center justify-center pt-2.5">
                     <span class="iconify text-2xl text-emerald-300 dark:text-emerald-400"
                           data-icon="fluent:folder-add-20-regular"></span>
-                    <div class="text-2xl font-medium text-center text-stone-500 ml-1.5">{{ lseries.0.tag.all.0.title|headline }}</div>
+                    <div class="text-xl font-medium text-center text-stone-500 ml-1.5">{{ lseries.0.tag.all.0.title|headline }}</div>
                 </div>
             </div>
             <div class="">
@@ -37,7 +40,7 @@
                 {% for learn in lseries %}
                     <div class="flex justify-between items-center gap-x-5">
                         <div class="flex items-center gap-2">
-                            <div class="p-2 rounded-full bg-black/5 dark:bg-darkTwo">
+                            <div class="p-2 rounded-full bg-black/10 dark:bg-tertiary/10">
                                 <span class="iconify text-xs text-emerald-300 dark:text-emerald-400"
                                       data-icon="akar-icons:check-box-fill"></span>
                             </div>

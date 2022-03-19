@@ -24,7 +24,7 @@ class IndexView(TemplateView):
             swift_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug)
 
         context['articles'] = Article.objects.filter(card_size='SM').order_by('-published_date')[:4]
-        context['articles_big'] = Article.objects.filter(card_size='MD').order_by('-published_date').first()
+        context['articles_big'] = Article.objects.filter(card_size='MD').order_by('-published_date')[:2]
         context['python_lang'] = python_langs
         context['swift_langs'] = swift_langs
         context['projects'] = Project.objects.all().order_by('-published_date')[:2]

@@ -2,7 +2,10 @@
 {% load website_extras %}
 
 <div class="
-    border dark:border-stone-500/10 bg-tertiary dark:bg-darkTwo
+{#    border dark:border-stone-500/10 bg-tertiary dark:bg-darkTwo#}
+    border dark:border-stone-500/40
+{#    bg-tertiary dark:bg-black#}
+{#    bg-tertiary dark:bg-[#161619]#}
     rounded-md min-h-[80px] md:min-h-[120px] flex gap-x-3 p-2 mb-2
     group
     break-inside-avoid-column
@@ -19,7 +22,7 @@
     </div>
 
     <div class="flex-1 flex flex-col justify-between">
-        <div class="">
+        <div class="font-ff">
             <a href="{{ data.get_absolute_url }}">
                 <h1 class="text-xl md:text-xl !leading-6 font-bold text-prussianBlue dark:text-stone-300 group-hover:text-bitterSweet"
                     >{{ data.title|headline }}

@@ -2,9 +2,10 @@
 {% load website_extras %}
 
 <div class="
-            min-h-[250px] lg:min-h-[300px] w-full
-            flex flex-col bg-tertiary
-            dark:bg-darkTwo border
+            min-h-[220px] lg:min-h-[280px] w-full
+            flex flex-col border
+{#            bg-tertiary dark:bg-darkTwo#}
+{#            bg-tertiary dark:bg-[#161619]#}
             dark:border-stone-500/10
             dark:text-stone-400 rounded-md
             box-content mb-2
@@ -13,21 +14,21 @@
 >
     {% if data.no_image %}
         {% if data.article_series.title == 'swift' %}
-            <div class="w-full h-40 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
+            <div class="w-full h-32 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
                  style="background-image: url({% static 'images/learning-swift.png' %})">
             </div>
         {% else %}
-            <div class="w-full h-40 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
+            <div class="w-full h-32 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
                  style="background-image: url({{ data.article_series.image.url }})">
             </div>
         {% endif %}
     {% else %}
-        <div class="w-full h-40 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
+        <div class="w-full h-32 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
              style="background-image: url({{ data.image.url }})">
         </div>
     {% endif %}
 
-    <div class="flex-1 flex">
+    <div class="flex-1 flex font-ff">
         <div class="
         w-[22%] grid place-content-center
         p-4 font-bold leading-none
@@ -37,14 +38,14 @@
         backdrop-blur-lg border-r
         dark:border-none"
         >
-            <div class="grid w-full place-content-center">
-                <p class="text-stone-700 pb-3 dark:text-stone-500 text-center">{{ data.get_read_time }}</p>
-                <span class="iconify text-stone-500 text-4xl font-medium" data-icon="bi:clock-history"></span>
+            <div class="grid w-full place-items-center">
+                <p class="text-stone-700 pb-3 text-xs lg:text-sm dark:text-stone-500 text-center">{{ data.get_read_time }}</p>
+                <span class="iconify text-stone-500 text-2xl lg:text-3xl font-medium" data-icon="bi:clock-history"></span>
             </div>
 
         </div>
         <div class="flex-1 flex flex-col justify-between px-4 pt-4 pb-2">
-            <div class="">
+            <div>
                 <h1 class="mb-2 text-xl text-prussianBlue dark:text-stone-400 !leading-6 font-bold dark:text-neutral-300">
                     <a class="hover:text-bitterSweet"
                        href="{{ data.get_absolute_url }}">{{ data.title|headline }}</a>

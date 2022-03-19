@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'FF Nort ExtLt';
+    src: url('FFNort-ExtraLight.eot');
+    src: local('FF Nort Extra Light'), local('FFNort-ExtraLight'),
+        url('FFNort-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-ExtraLight.woff2') format('woff2'),
+        url('FFNort-ExtraLight.woff') format('woff'),
+        url('FFNort-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FF Nort ExtBd';
+    src: url('FFNort-ExtraBoldItalic.eot');
+    src: local('FF Nort Extra Bold Italic'), local('FFNort-ExtraBoldItalic'),
+        url('FFNort-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-ExtraBoldItalic.woff2') format('woff2'),
+        url('FFNort-ExtraBoldItalic.woff') format('woff'),
+        url('FFNort-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'FF Nort Med';
+    src: url('FFNort-MediumItalic.eot');
+    src: local('FF Nort Medium Italic'), local('FFNort-MediumItalic'),
+        url('FFNort-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-MediumItalic.woff2') format('woff2'),
+        url('FFNort-MediumItalic.woff') format('woff'),
+        url('FFNort-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'FF Nort ExtLt';
+    src: url('FFNort-ExtraLightItalic.eot');
+    src: local('FF Nort Extra Light Italic'), local('FFNort-ExtraLightItalic'),
+        url('FFNort-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-ExtraLightItalic.woff2') format('woff2'),
+        url('FFNort-ExtraLightItalic.woff') format('woff'),
+        url('FFNort-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-ThinItalic.eot');
+    src: local('FF Nort Thin Italic'), local('FFNort-ThinItalic'),
+        url('FFNort-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-ThinItalic.woff2') format('woff2'),
+        url('FFNort-ThinItalic.woff') format('woff'),
+        url('FFNort-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'FF Nort ExtBd';
+    src: url('FFNort-ExtraBold.eot');
+    src: local('FF Nort Extra Bold'), local('FFNort-ExtraBold'),
+        url('FFNort-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-ExtraBold.woff2') format('woff2'),
+        url('FFNort-ExtraBold.woff') format('woff'),
+        url('FFNort-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-Regular.eot');
+    src: local('FF Nort Regular'), local('FFNort-Regular'),
+        url('FFNort-Regular.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-Regular.woff2') format('woff2'),
+        url('FFNort-Regular.woff') format('woff'),
+        url('FFNort-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-BlackItalic.eot');
+    src: local('FF Nort Black Italic'), local('FFNort-BlackItalic'),
+        url('FFNort-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-BlackItalic.woff2') format('woff2'),
+        url('FFNort-BlackItalic.woff') format('woff'),
+        url('FFNort-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'FF Nort Med';
+    src: url('FFNort-Medium.eot');
+    src: local('FF Nort Medium'), local('FFNort-Medium'),
+        url('FFNort-Medium.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-Medium.woff2') format('woff2'),
+        url('FFNort-Medium.woff') format('woff'),
+        url('FFNort-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-Thin.eot');
+    src: local('FF Nort Thin'), local('FFNort-Thin'),
+        url('FFNort-Thin.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-Thin.woff2') format('woff2'),
+        url('FFNort-Thin.woff') format('woff'),
+        url('FFNort-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-Bold.eot');
+    src: local('FF Nort Bold'), local('FFNort-Bold'),
+        url('FFNort-Bold.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-Bold.woff2') format('woff2'),
+        url('FFNort-Bold.woff') format('woff'),
+        url('FFNort-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-Black.eot');
+    src: local('FF Nort Black'), local('FFNort-Black'),
+        url('FFNort-Black.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-Black.woff2') format('woff2'),
+        url('FFNort-Black.woff') format('woff'),
+        url('FFNort-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-Light.eot');
+    src: local('FF Nort Light'), local('FFNort-Light'),
+        url('FFNort-Light.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-Light.woff2') format('woff2'),
+        url('FFNort-Light.woff') format('woff'),
+        url('FFNort-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-LightItalic.eot');
+    src: local('FF Nort Light Italic'), local('FFNort-LightItalic'),
+        url('FFNort-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-LightItalic.woff2') format('woff2'),
+        url('FFNort-LightItalic.woff') format('woff'),
+        url('FFNort-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-BoldItalic.eot');
+    src: local('FF Nort Bold Italic'), local('FFNort-BoldItalic'),
+        url('FFNort-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-BoldItalic.woff2') format('woff2'),
+        url('FFNort-BoldItalic.woff') format('woff'),
+        url('FFNort-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'FF Nort';
+    src: url('FFNort-Italic.eot');
+    src: local('FF Nort Italic'), local('FFNort-Italic'),
+        url('FFNort-Italic.eot?#iefix') format('embedded-opentype'),
+        url('FFNort-Italic.woff2') format('woff2'),
+        url('FFNort-Italic.woff') format('woff'),
+        url('FFNort-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+

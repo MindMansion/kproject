@@ -18,10 +18,10 @@ class IndexView(TemplateView):
         swift_langs = {}
 
         for i in LearnSeries.objects.filter(language__learn_lang_slug='python', learn__learn_slug__isnull=False)[:1]:
-            python_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug)
+            python_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug).order_by('published_date')
 
         for i in LearnSeries.objects.filter(language__learn_lang_slug='swift', learn__learn_slug__isnull=False)[:1]:
-            swift_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug)
+            swift_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug).order_by('published_date')
 
         context['articles'] = Article.objects.filter(card_size='SM').order_by('-published_date')[:4]
         context['articles_big'] = Article.objects.filter(card_size='MD').order_by('-published_date')[:2]
@@ -48,13 +48,13 @@ class LearnView(ListView):
         swift_langs = {}
 
         for i in LearnSeries.objects.filter(language__learn_lang_slug='python', published=True)[:2]:
-            python_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug)
+            python_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug).order_by('published_date')
 
         for i in LearnSeries.objects.filter(language__learn_lang_slug='swift', published=True)[:2]:
-            swift_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug)
+            swift_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug).order_by('published_date')
 
         for i in LearnSeries.objects.filter(language__learn_lang_slug='cpp', published=True)[:2]:
-            cpp_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug)
+            cpp_langs[i] = Learn.objects.filter(series__learn_lang_series_slug=i.learn_lang_series_slug).order_by('published_date')
 
         context['series'] = LearnSeries.objects.all()
         context['cpp_langs'] = cpp_langs

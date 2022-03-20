@@ -1294,6 +1294,9 @@ h5, h6 {
 .min-h-\[250px\]{
   min-height: 250px;
 }
+.min-h-\[350px\]{
+  min-height: 350px;
+}
 .min-h-\[450px\]{
   min-height: 450px;
 }

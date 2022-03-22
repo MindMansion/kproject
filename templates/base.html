@@ -20,7 +20,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
-    <meta name="msapplication-TileColor" content="#ffffff">
+{#    <meta name="theme-color" content="#102E4A" />#}
+    <meta name="theme-color" content="#ff5045" />
+    <meta name="msapplication-TileColor" content="#ff5045">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     {% block seo %}
     {% endblock %}
@@ -42,7 +44,9 @@
 <body>
 <div class="flex flex-col min-h-screen">
     {% include 'components/header.html' %}
-    <main class="flex-1 mt-[50px]">
+    <main class="flex-1">
+{#        <div class="h-[50px] w-full bg-prussianBlue"></div>#}
+        <div class="h-[50px] w-full bg-link"></div>
         {% block content %}{% endblock %}
     </main>
     {% include 'components/footer.html' %}

@@ -32,92 +32,46 @@
         <div class="wrapper">
             <div class="container mx-auto flex flex-col gap-y-16 xl:gap-y-28 mt-2 mb-10 md:mb-16">
                 <div class="grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-4">
-                    {% if articles %}
-                        {% for article in articles %}
+                    {% if series %}
+                        {% for article in series %}
                             {% include 'website/article/article-card-series.html' with article=article %}
                         {% endfor %}
 
                     {% endif %}
                 </div>
-                <div class="grid gap-y-16 xl:gap-y-28 font-ff">
-                    {% if langs %}
-                        {% for language, items in langs %}
-                            {% if items.count > 0 %}
-                                {% if language.title == 'swift' %}
-                                    <div>
-                                        <div class="grid pb-8 px-3 place-content-center text-center text-stone-800 dark:text-[#EEE5E9]">
-                                            <div class="text-2xl lg:text-3xl font-bold">Swift
-                                                Articles
-                                            </div>
-                                            <p class="pt-2 pb-6 max-w-md md:text-lg">{{ language.summary }}</p>
-                                        </div>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
-                                            {% for item in items %}
-                                                {% if item.published %}
-                                                    {% if forloop.counter > 4 %}
-                                                        {% include 'website/article/article-card-big.html' with data=item %}
-                                                    {% else %}
-                                                        {% include 'website/article/article-card-small.html' with data=item %}
-                                                    {% endif %}
-                                                {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                        <div class="w-full text-right mt-2">
-                                            <a href="{{ language.get_absolute_url }}" class="text-sm text-emerald-500">view
-                                                more</a>
-                                        </div>
-                                    </div>
+                <div class="">
+                    {% if articles %}
+                        <div class="border-b dark:border-stone-500/50">
+                            <div class="text-3xl font-bold pb-2">Articles</div>
+                        </div>
+                        <div class="pt-10 flex flex-col gapy-5 md:gap-y-10 divide-y-[1px] dark:divide-neutral-700/50">
+                            {% for article in articles %}
+                                {% include 'website/article/article-card.html' with article=article %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
 
-                                {% elif language.title == 'python' %}
-                                    <div>
-                                        <div class="grid pb-8 px-3 place-content-center text-center text-stone-800 dark:text-[#EEE5E9]">
-                                            <div class="text-2xl lg:text-3xl font-bold">Python
-                                                Articles
-                                            </div>
-                                            <p class="pt-2 pb-6 max-w-md md:text-lg">{{ language.summary }}</p>
-                                        </div>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
-                                            {% for item in items %}
-                                                {% if forloop.counter > 4 %}
-                                                    {% include 'website/article/article-card-big.html' with data=item %}
-                                                {% else %}
-                                                    {% include 'website/article/article-card-small.html' with data=item %}
-                                                {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                        <div class="w-full text-right mt-2">
-                                            <a href="{{ language.get_absolute_url }}" class="text-sm text-emerald-500">view
-                                                more</a>
-                                        </div>
-                                    </div>
-
-                                {% else %}
-                                    <div>
-                                        <div class="grid place-content-center text-center pb-8 px-3 text-stone-800 dark:text-[#EEE5E9]">
-                                            <div class="text-2xl lg:text-3xl font-bold tracking-wide">{{ language.title|headline }}
-                                                Articles
-                                            </div>
-                                            <p class="pt-2 pb-6 max-w-md md:text-lg">{{ language.summary|capfirst }}</p>
-                                        </div>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
-                                            {% for item in items %}
-                                                {% if item.published %}
-                                                    {% if forloop.counter0 > 3 %}
-                                                        {% include 'website/article/article-card-big.html' with data=item %}
-                                                    {% else %}
-                                                        {% include 'website/article/article-card-small.html' with data=item %}
-                                                    {% endif %}
-                                                {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                        <div class="w-full text-right mt-2">
-                                            <a href="{{ language.get_absolute_url }}" class="text-sm text-emerald-500">view
-                                                more</a>
-                                        </div>
-                                    </div>
+                    {% if page_obj %}
+                        <div class="flex justify-between pt-10 md:pt-16">
+                            <div class="flex gap-x-4 md:gap-x-6 items-center uppercase text-sm text-teal-500 hover:text-bitterSweet">
+{#                            <div class="flex gap-x-4 md:gap-x-6 items-center uppercase text-sm text-prussianBlue dark:text-stone-400">#}
+                                {% if page_obj.has_previous %}
+                                    {% if paginator.num_pages > 2 %}
+                                        <a class="flex items-center" href="?page=1">&langle; first</a>
+                                    {% endif %}
+                                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
                                 {% endif %}
-                            {% endif %}
-                        {% endfor %}
+                            </div>
+                            <div class="flex gap-x-4 md:gap-x-6 items-center uppercase text-sm text-teal-500 hover:text-bitterSweet">
+{#                            <div class="flex gap-x-4 md:gap-x-6 items-center uppercase text-sm text-prussianBlue dark:text-stone-400">#}
+                                {% if page_obj.has_next %}
+                                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                    {% if paginator.num_pages > 2 %}
+                                        <a class="flex items-center" href="?page={{ page_obj.paginator.num_pages }}">last &rangle;</a>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
                     {% endif %}
                 </div>
             </div>

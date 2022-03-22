@@ -124,22 +124,18 @@ class LearnDetailView(DetailView):
 
 
 class ArticleView(ListView):
-    model = ArticleSeries
+    model = Article
     context_object_name = 'articles'
     template_name = 'website/article-view.html'
+    paginate_by = 10
 
     def get_queryset(self):
-        series = ArticleSeries.objects.all()
+        series = Article.objects.all().order_by('-published_date')
         return get_list_or_404(series)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        slugs = [slug for slug in ArticleSeries.objects.all()]
-        article_langs = []
-        for slug in slugs:
-            article_langs.append(Article.objects.filter(article_series__article_series_slug=slug.article_series_slug).order_by('-published_date')[:5])
-        series = list(zip(slugs, article_langs))
-        context['langs'] = series
+        context['series'] = ArticleSeries.objects.all()
         return context
 
 

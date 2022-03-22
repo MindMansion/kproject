@@ -1,0 +1,22 @@
+{% load website_extras %}
+
+<div class="py-2 flex flex-col md:flex-row md:gap-4 justify-between group">
+    <div class="flex flex-col md:flex-row gap-2 md:gap-4">
+        <div class="min-w-[100px]">
+            <div class="flex gap-1 items-center text-base">
+                <span class="iconify text-stone-500 text-base font-medium" data-icon="bi:clock-history"></span>
+                <p class="text-stone-700 dark:text-stone-500">{{ article.get_read_time }}</p>
+            </div>
+        </div>
+        <div class="flex-1">
+            <a class="font-bold text-sm text-teal-500 uppercase pb-1" href="{{ article.article_series.get_absolute_url }}">{{ article.article_series.title|headline }}</a>
+            <h1 class="text-xl font-bold leading-6 font-bold text-prussianBlue dark:text-stone-300 group-hover:text-bitterSweet">
+                <a href="{{ article.get_absolute_url }}">{{ article.title|headline }}</a>
+            </h1>
+            <p class="py-2 max-w-lg group-hover:text-stone-500">{{ article.summary|capfirst }}</p>
+        </div>
+    </div>
+    <div class="self-end">
+        <img src="{{ article.image.url }}" alt="Article image" class="aspect-square max-w-[100px] max-h-[100px]">
+    </div>
+</div>

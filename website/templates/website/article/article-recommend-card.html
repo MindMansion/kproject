@@ -1,45 +1,22 @@
 {% load static %}
 {% load website_extras %}
 
-<div class="
-            min-h-[220px] lg:min-h-[280px]
-            flex flex-col w-full
-{#            dark:bg-darkFour bg-tertiary#}
-            border dark:border-stone-500/10
-            dark:text-stone-400 rounded-md
-            box-content
-            "
->
 
-    {% if data.no_image %}
-        {% if data.article_series.title == 'swift' %}
-            <div class="w-full h-32 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
-                 style="background-image: url({% static 'images/learning-swift.png' %})">
-            </div>
-        {% else %}
-            <div class="w-full h-32 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
-                 style="background-image: url({{ data.article_series.image.url }})">
-            </div>
-        {% endif %}
-    {% else %}
-        <div class="w-full h-32 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"
-             style="background-image: url({{ data.image.url }})">
-        </div>
-    {% endif %}
-
-    <div class="flex-1 flex font-ff">
+<div class="border dark:border-stone-500/50 flex font-ff">
         <div class="
-        w-[22%] grid place-content-center
-        p-4 font-bold leading-none
-        text-gray-800 uppercase
+        w-[22%] flex flex-col gap-2
         dark:bg-black/50
-        rounded-bl-md backdrop-filter
+        backdrop-filter
         backdrop-blur-lg border-r
         dark:border-none"
         >
-            <div class="grid w-full place-items-center">
+            <div class="h-[60%]">
+                <img src="{{ data.image.url }}" alt="Article image" class="aspect-auto w-full h-[60%]">
+            </div>
+            <div class="w-full max-h-[40%] flex items-center gap-x-1 justify-center">
                 <p class="text-stone-700 pb-3 text-xs lg:text-sm dark:text-stone-500 text-center">{{ data.get_read_time }}</p>
-                <span class="iconify text-stone-500 text-2xl lg:text-3xl font-medium" data-icon="bi:clock-history"></span>
+                <span class="iconify text-stone-500 text-xl font-medium"
+                      data-icon="bi:clock-history"></span>
             </div>
 
         </div>
@@ -53,13 +30,75 @@
             </div>
             <div class="flex justify-between">
                 <div class="">
-                    <a class="hover:text-bitterSweet"
-                       href="{{ data.get_absolute_url }}">Read more</a>
+                    <time class="text-sm text-stone-500">{{ article.published_date|date }}</time>
                 </div>
-                <div class="text-bitterSweet font-bold">
+                <div class="text-teal-500 font-bold">
                     <a href="{{ data.article_series.get_absolute_url }}">{{ data.article_series.title|title }}</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+
+{#<div class="#}
+{#            min-h-[220px] lg:min-h-[280px]#}
+{#            flex flex-col w-full#}
+{#            dark:bg-darkFour bg-tertiary#}
+{#            border dark:border-stone-500/10#}
+{#            dark:text-stone-400 rounded-md#}
+{#            box-content#}
+{#            "#}
+{#>#}
+{##}
+{#    {% if data.no_image %}#}
+{#        {% if data.article_series.title == 'swift' %}#}
+{#            <div class="w-full h-32 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"#}
+{#                 style="background-image: url({% static 'images/learning-swift.png' %})">#}
+{#            </div>#}
+{#        {% else %}#}
+{#            <div class="w-full h-32 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"#}
+{#                 style="background-image: url({{ data.article_series.image.url }})">#}
+{#            </div>#}
+{#        {% endif %}#}
+{#    {% else %}#}
+{#        <div class="w-full h-32 lg:h-52 bg-center bg-cover aspect-[16/9] rounded-t"#}
+{#             style="background-image: url({{ data.image.url }})">#}
+{#        </div>#}
+{#    {% endif %}#}
+{##}
+{#    <div class="flex-1 flex font-ff">#}
+{#        <div class="#}
+{#        w-[22%] grid place-content-center#}
+{#        p-4 font-bold leading-none#}
+{#        text-gray-800 uppercase#}
+{#        dark:bg-black/50#}
+{#        rounded-bl-md backdrop-filter#}
+{#        backdrop-blur-lg border-r#}
+{#        dark:border-none"#}
+{#        >#}
+{#            <div class="grid w-full place-items-center">#}
+{#                <p class="text-stone-700 pb-3 text-xs lg:text-sm dark:text-stone-500 text-center">{{ data.get_read_time }}</p>#}
+{#                <span class="iconify text-stone-500 text-2xl lg:text-3xl font-medium" data-icon="bi:clock-history"></span>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+{#        <div class="flex-1 flex flex-col justify-between px-4 pt-4 pb-2">#}
+{#            <div class="">#}
+{#                <h1 class="mb-2 text-xl text-prussianBlue dark:text-slate-200 !leading-6 font-bold dark:text-neutral-300">#}
+{#                    <a class="hover:text-bitterSweet"#}
+{#                       href="{{ data.get_absolute_url }}">{{ data.title|headline }}</a>#}
+{#                </h1>#}
+{#                <p class="leading-normal pb-4 hidden lg:block">{{ data.summary|capfirst|truncatechars:50 }}</p>#}
+{#            </div>#}
+{#            <div class="flex justify-between">#}
+{#                <div class="">#}
+{#                    <a class="hover:text-bitterSweet"#}
+{#                       href="{{ data.get_absolute_url }}">Read more</a>#}
+{#                </div>#}
+{#                <div class="text-bitterSweet font-bold">#}
+{#                    <a href="{{ data.article_series.get_absolute_url }}">{{ data.article_series.title|title }}</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}

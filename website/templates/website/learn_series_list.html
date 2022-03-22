@@ -16,56 +16,59 @@
         <div class="relative min-h-[200px] md:min-h-[500px] bg-cover saturate-200"
              style="background-image: url({% static "images/bg-blurred.jpg" %});">
             <div class="w-full min-h-full bg-tertiary/60 dark:bg-black/80 backdrop-filter backdrop-blur-xl">
-            <div class="wrapper">
-                <div class="
+                <div class="wrapper">
+                    <div class="
                     min-h-[200px] md:min-h-[500px]
                     container mx-auto
                     grid place-content-center py-8 md:pt-16 lg:pt-24
                     ">
-                    <div class="grid place-content-center text-center">
-                        <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-prussianBlue dark:text-stone-200 uppercase">
-                            {% if parent.title|lower == 'cpp' %}
-                                C++
-                            {% else %}
-                                {{ parent.title|headline }}
-                            {% endif %}
+                        <div class="grid place-content-center text-center">
+                            <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-prussianBlue dark:text-stone-200 uppercase">
+                                {% if parent.title|lower == 'cpp' %}
+                                    C++
+                                {% else %}
+                                    {{ parent.title|headline }}
+                                {% endif %}
+                            </div>
+                            <p class="pt-4 pb-10 px-3 text-lg md:text-xl max-w-lg">
+                                {{ parent.summary|capfirst }}
+                            </p>
                         </div>
-                        <p class="pt-4 pb-10 px-3 text-lg md:text-xl max-w-lg">
-                            {{ parent.summary|capfirst }}
-                        </p>
-                    </div>
-                    <div class="place-self-center">
-                        {% if parent.title == 'swift' %}
-                            <div class="
+                        <div class="place-self-center">
+                            {% if parent.title == 'swift' %}
+                                <div class="
                             max-h-[200px] max-w-[300px] md:max-h-[400px] md:max-w-[700px]
                             min-h-[200px] min-w-[300px] md:min-h-[500px] md:min-w-[700px]
                             bg-swift-hero dark:bg-swift-hero-dark bg-contain bg-no-repeat"></div>
-                        {% else %}
-                            <img src="{{ parent.image.url }}" alt="" class="aspect-square max-h-[100px] max-w-[100px] md:max-h-[130px] md:max-w-[130px] mx-auto saturate-200">
-                        {% endif %}
+                            {% else %}
+                                <img src="{{ parent.image.url }}" alt=""
+                                     class="aspect-square max-h-[100px] max-w-[100px] md:max-h-[130px] md:max-w-[130px] mx-auto saturate-200">
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-        <div class="wrapper">
-            <div class="container mx-auto flex flex-col gap-y-8 md:gap-y-16 xl:gap-y-28 my-8">
-                <div class="grid gap-y-4 md:gap-y-10 pt-10 lg:pt-16">
-                    {% for k, lang_series in learn_series_list.items %}
-                        {% if parent.learn_lang_slug == 'python' %}
-                            {% if k.published %}
-                                {% if forloop.counter|divisibleby:2 %}
-                                    {% include 'website/learn/learn-card-left.html' with lseries=lang_series series=k %}
-                                {% else %}
-                                    {% include 'website/learn/learn-card-right.html' with lseries=lang_series series=k %}
+        <div class="bg-tertiary dark:bg-deepDark py-10 lg:py-16">
+            <div class="wrapper">
+                <div class="container mx-auto flex flex-col gap-y-8 md:gap-y-16 xl:gap-y-28">
+                    <div class="grid gap-y-4 md:gap-y-8">
+                        {% for k, lang_series in learn_series_list.items %}
+                            {% if parent.learn_lang_slug == 'python' %}
+                                {% if k.published %}
+                                    {% if forloop.counter|divisibleby:2 %}
+                                        {% include 'website/learn/learn-card-left.html' with lseries=lang_series series=k %}
+                                    {% else %}
+                                        {% include 'website/learn/learn-card-right.html' with lseries=lang_series series=k %}
+                                    {% endif %}
                                 {% endif %}
-                            {% endif %}
-                        {% elif parent.title == 'swift' %}
-                            {% include 'website/learn/learn-card-swift.html' with lseries=lang_series series=k %}
-                        {% else %}
+                            {% elif parent.title == 'swift' %}
+                                {% include 'website/learn/learn-card-swift.html' with lseries=lang_series series=k %}
+                            {% else %}
 
-                        {% endif %}
-                    {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>

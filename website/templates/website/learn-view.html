@@ -14,7 +14,8 @@
 
 {% block content %}
     <div>
-        <div class="min-h-[400px] lg:min-h-[500px] bg-tertiary dark:bg-black/50">
+        {#        <div class="min-h-[400px] lg:min-h-[500px] bg-tertiary dark:bg-black/50">#}
+        <div class="min-h-[400px] lg:min-h-[500px]">
             <div class="wrapper">
                 <div class="container mx-auto grid place-content-center min-h-[400px] lg:min-h-[500px] text-center">
                     <div class="text-4xl lg:text-5xl font-extrabold text-prussianBlue dark:text-stone-300">Learning
@@ -27,93 +28,95 @@
                 </div>
             </div>
         </div>
-        <div class="md:wrapper px-2 mt-10 md:mt-16">
-            <div class="container mx-auto flex flex-col gap-y-16 xl:gap-y-28 mt-2 mb-16">
-                {% if languages %}
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {% for lang in languages %}
-                            {% include 'website/learn/learn-langs-card.html' with  lang_series=lang %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-
-                {% if swift_langs %}
-                    <div>
-                        <div class="text-lg font-bold pb-2 pl-2 md:pl-0">
-                            SWIFT TUTORIALS
-                        </div>
-                        <div class="grid gap-y-2 -mx-2 md:-mx-0">
-                            {% for k, series_obj in swift_langs.items %}
-                                <div>
-                                    {% if k.published %}
-                                        {% include 'website/learn/learn-card-swift.html' with lseries=series_obj series=k %}
-                                    {% endif %}
-                                </div>
+        <div class="bg-tertiary dark:bg-deepDark pt-10 pb-16">
+            <div class="md:wrapper px-2">
+                <div class="container mx-auto flex flex-col gap-y-16 xl:gap-y-28 mt-2 mb-16">
+                    {% if languages %}
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {% for lang in languages %}
+                                {% include 'website/learn/learn-langs-card.html' with  lang_series=lang %}
                             {% endfor %}
                         </div>
-                        {% if swift_langs.items|length > 1 %}
+                    {% endif %}
+
+                    {% if swift_langs %}
+                        <div>
+                            <div class="text-lg font-bold pb-2 pl-2 md:pl-0">
+                                SWIFT TUTORIALS
+                            </div>
+                            <div class="grid gap-y-2 -mx-2 md:-mx-0">
+                                {% for k, series_obj in swift_langs.items %}
+                                    <div>
+                                        {% if k.published %}
+                                            {% include 'website/learn/learn-card-swift.html' with lseries=series_obj series=k %}
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            {% if swift_langs.items|length > 1 %}
+                                <div class="flex justify-end mt-1">
+                                    <a href="/learn/swift" class="text-sm text-emerald-500">view more</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+
+                    {% if python_lang %}
+                        <div>
+                            <div class="text-lg font-bold pb-2 pl-2 md:pl-0">
+                                PYTHON TUTORIALS
+                            </div>
+                            <div class="grid gap-y-2 -mx-2 md:-mx-0">
+                                {% for k, series_obj in python_lang.items %}
+                                    <div>
+                                        {% if k.published %}
+                                            {% if forloop.counter|divisibleby:2 %}
+                                                {% include 'website/learn/learn-card-right.html' with lseries=series_obj series=k %}
+                                            {% else %}
+                                                {% include 'website/learn/learn-card-left.html' with lseries=series_obj  series=k %}
+                                            {% endif %}
+
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
                             <div class="flex justify-end mt-1">
-                                <a href="/learn/swift" class="text-sm text-emerald-500">view more</a>
-                            </div>
-                        {% endif %}
-                    </div>
-                {% endif %}
-
-
-                {% if python_lang %}
-                    <div>
-                        <div class="text-lg font-bold pb-2 pl-2 md:pl-0">
-                            PYTHON TUTORIALS
-                        </div>
-                        <div class="grid gap-y-2 -mx-2 md:-mx-0">
-                            {% for k, series_obj in python_lang.items %}
-                                <div>
-                                    {% if k.published %}
-                                        {% if forloop.counter|divisibleby:2 %}
-                                            {% include 'website/learn/learn-card-right.html' with lseries=series_obj series=k %}
-                                        {% else %}
-                                            {% include 'website/learn/learn-card-left.html' with lseries=series_obj  series=k %}
-                                        {% endif %}
-
-                                    {% endif %}
+                                <div class="flex justify-end">
+                                    <a href="/learn/python" class="text-sm text-emerald-500">view more</a>
                                 </div>
-                            {% endfor %}
-                        </div>
-                        <div class="flex justify-end mt-1">
-                            <div class="flex justify-end">
-                                <a href="/learn/python" class="text-sm text-emerald-500">view more</a>
                             </div>
                         </div>
-                    </div>
-                {% endif %}
+                    {% endif %}
 
-                {% if cpp_langs %}
-                    <div>
-                        <div class="text-lg font-bold pb-2 pl-2 md:pl-0">
-                            C++ TUTORIALS
-                        </div>
-                        <div class="grid gap-y-2 -mx-2 md:-mx-0">
-                            {% for k, series_obj in cpp_langs.items %}
-                                <div>
-                                    {% if k.published %}
-                                        {% if forloop.counter|divisibleby:2 %}
-                                            {% include 'website/learn/learn-card-right.html' with lseries=series_obj series=k %}
-                                        {% else %}
-                                            {% include 'website/learn/learn-card-left.html' with lseries=series_obj  series=k %}
+                    {% if cpp_langs %}
+                        <div>
+                            <div class="text-lg font-bold pb-2 pl-2 md:pl-0">
+                                C++ TUTORIALS
+                            </div>
+                            <div class="grid gap-y-2 -mx-2 md:-mx-0">
+                                {% for k, series_obj in cpp_langs.items %}
+                                    <div>
+                                        {% if k.published %}
+                                            {% if forloop.counter|divisibleby:2 %}
+                                                {% include 'website/learn/learn-card-right.html' with lseries=series_obj series=k %}
+                                            {% else %}
+                                                {% include 'website/learn/learn-card-left.html' with lseries=series_obj  series=k %}
+                                            {% endif %}
+
                                         {% endif %}
-
-                                    {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="flex justify-end mt-1">
+                                <div class="flex justify-end">
+                                    <a href="/learn/cpp" class="text-sm text-emerald-500">view more</a>
                                 </div>
-                            {% endfor %}
-                        </div>
-                        <div class="flex justify-end mt-1">
-                            <div class="flex justify-end">
-                                <a href="/learn/cpp" class="text-sm text-emerald-500">view more</a>
                             </div>
                         </div>
-                    </div>
-                {% endif %}
+                    {% endif %}
 
+                </div>
             </div>
         </div>
     </div>

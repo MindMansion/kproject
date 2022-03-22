@@ -15,14 +15,15 @@
             {% include 'website/components/hero.html' %}
         </div>
         {% if articles or articles_big %}
-            <div class="md:wrapper px-2 py-16">
+            <div class="w-full md:wrapper px-2 py-16">
                 <div class="container mx-auto">
                     {% include 'website/article/recent-articles.html' with smalls=articles bigs=articles_big %}
                 </div>
             </div>
         {% endif %}
         {% if python_lang or swift_langs %}
-            <div class="bg-tertiary/90 dark:bg-dark/50 py-16">
+{#            <div class="bg-tertiary/90 dark:bg-dark/50 py-16">#}
+            <div class="bg-tertiary dark:bg-black/80 py-16">
                 <div class="md:wrapper px-2">
                     <div class="container mx-auto">
                         {% include 'website/learn/recent-learn.html' with python=python_lang swift=swift_langs %}

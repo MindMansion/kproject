@@ -29,20 +29,15 @@
                 </div>
             </div>
 
-            <div class="columns-1 md:columns-2 gap-x-4 space-y-4">
+            <div class="">
                 {% if articles %}
-                    {% for article in articles %}
-                        {% if article.published %}
-                            {% if article.card_size == 'SM' %}
-                                {% include 'website/article/article-card-small.html' with data=article %}
-                            {% elif article.card_size == 'MD' %}
-                                {% include 'website/article/article-card-big.html' with data=article %}
-                            {% endif %}
-                        {% endif %}
-                    {% endfor %}
+                    <div class="pt-10 flex flex-col gapy-5 md:gap-y-10 divide-y-[1px] dark:divide-neutral-700/50">
+                        {% for article in articles %}
+                            {% include 'website/article/article-card.html' with article=article %}
+                        {% endfor %}
+                     </div>
                 {% endif %}
             </div>
         </div>
     </div>
 {% endblock %}
-

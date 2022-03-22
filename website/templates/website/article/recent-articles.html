@@ -1,28 +1,45 @@
 {% load static %}
 
-<div>
-    <div class="font-ff">
-        {#            <div class="text-center dark:text-[#B7AD99] grid place-content-center flex-1">#}
-        <div class="text-center dark:text-[#EEE5E9] grid place-content-center flex-1 pb-8">
-            <div class="text-4xl font-bold pb-2">Articles</div>
-            <p class="max-w-md pb-6 px-3 md:px-0 text-lg">Programming articles and tips writen in different
-                languages such as
-                swift, python and c++</p>
-        </div>
-        <div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-                {% for article in smalls %}
-                    {% include 'website/article/article-card-small.html' with data=article %}
-                {% endfor %}
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {% for article in bigs %}
-                    {% include 'website/article/article-card-big.html' with data=article %}
-                {% endfor %}
-            </div>
-        </div>
+{#<div>#}
+{#    <div class="font-ff">#}
+{#            <div class="text-center dark:text-[#B7AD99] grid place-content-center flex-1">#}
+{#        <div class="text-center dark:text-[#EEE5E9] grid place-content-center flex-1 pb-8">#}
+{#            <div class="text-4xl font-bold pb-2">Articles</div>#}
+{#            <p class="max-w-md pb-6 px-3 md:px-0 text-lg">Programming articles and tips writen in different#}
+{#                languages such as#}
+{#                swift, python and c++</p>#}
+{#        </div>#}
+{#        <div>#}
+{#            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">#}
+{#                {% for article in smalls %}#}
+{#                    {% include 'website/article/article-card-small.html' with data=article %}#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">#}
+{#                {% for article in bigs %}#}
+{#                    {% include 'website/article/article-card-big.html' with data=article %}#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="w-full text-right mt-2 font-ff">#}
+{#        <a href="{% url 'website:article-view' %}" class="text-sm text-emerald-500">view more</a>#}
+{#    </div>#}
+{#</div>#}
+
+<div class="font-ff">
+    <div class="pb-10 grid place-content-center text-center">
+        <div class="text-4xl font-bold pb-2">Articles</div>
+        <p class="max-w-lg pb-6 text-lg">Programming articles and tips writen in different
+            languages such as
+            swift, python and c++</p>
     </div>
-    <div class="w-full text-right mt-2 font-ff">
-        <a href="{% url 'website:article-view' %}" class="text-sm text-emerald-500">view more</a>
+    <div class="flex flex-col gapy-5 md:gap-y-10 divide-y-[1px] dark:divide-neutral-700/50">
+        {% for article in smalls %}
+            {% include 'website/article/article-card.html' with article=article %}
+        {% endfor %}
+    </div>
+    <div class="w-full mt-5 lg:mt-8 flex justify-end">
+        <a href="{% url 'website:article-view' %}" class="text-sm text-teal-500 hover:text-link">view more</a>
     </div>
 </div>
